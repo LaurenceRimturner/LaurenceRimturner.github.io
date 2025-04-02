@@ -1,0 +1,13 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="150" height="150">
+	<title>New Project</title>
+	<style>
+		tspan { white-space:pre } 
+		.s0 { fill: #2c55d8 } 
+		.t1 { font-size: 44px;fill: #ffffff;font-weight: 500;font-style: italic;font-family: "Besley-MediumItalic", "Besley" } 
+	</style>
+	<path id="Background" fill-rule="evenodd" class="s0" d="m7 0h36c3.9 0 7 3.1 7 7v36c0 3.9-3.1 7-7 7h-36c-3.9 0-7-3.1-7-7v-36c0-3.9 3.1-7 7-7z"/>
+	<text id="L." style="transform: matrix(1,0,0,1,7,6)" >
+		<tspan x="0" y="34.8" class="t1">L</tspan><tspan  y="34.8" class="t1">.
+</tspan>
+	</text>
+</svg>
