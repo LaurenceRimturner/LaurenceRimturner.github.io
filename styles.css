@@ -57,7 +57,7 @@
   color: var(--main-font-color);
   user-select: none;
   /* border-radius: 2px; */
-  transition: background-color .5s cubic-bezier(0.32, 0.76, 0.32, 0.76), color .5s cubic-bezier(0.32, 0.76, 0.32, 0.76), fill .25s cubic-bezier(0.32, 0.76, 0.32, 0.76);
+  transition: background-color .5s cubic-bezier(0.32, 0.76, 0.32, 0.76), color .5s cubic-bezier(0.32, 0.76, 0.32, 0.76), fill .25s cubic-bezier(0.32, 0.76, 0.32, 0.76), border .25s cubic-bezier(0.32, 0.76, 0.32, 0.76);
 }
 
 
@@ -1819,7 +1819,8 @@ footer h4 {
 
 .footer-icons div {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -1832,10 +1833,10 @@ footer .marquee-container {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   gap: 10px;
-  width: 100%;
-  min-width: 250px;
+  width: 100px;
+  height: 100px;
   padding: 5px 15px;
 }
 
@@ -1845,17 +1846,14 @@ footer .marquee-container {
 }
 
 .contact-mail:hover {
-  background-color: var(--main-white);
-  border: 3px solid var(--main-font-color);
+  background-color: var(--main-font-color);
+  border: 3px solid var(--theme-color);
 }
 
 .contact-mail:hover path {
-  fill: var(--main-font-color);
+  fill: var(--theme-color);
 }
 
-.contact-mail:hover h3 {
-  color: var(--main-font-color);
-}
 
 .contact-linkedIn {
   background-color: var(--theme-color);
@@ -1871,9 +1869,22 @@ footer .marquee-container {
   fill: var(--theme-color);
 }
 
-.contact-linkedIn:hover h3 {
-  color: var(--theme-color);
+
+
+.contact-github {
+  background-color: var(--main-font-color);
+  border: 3px solid var(--main-white);
 }
+
+.contact-github:hover {
+  background-color: var(--main-font-color);
+  border: 3px solid var(--theme-color);
+}
+
+.contact-github:hover path {
+  fill: var(--theme-color);
+}
+
 
 
 .meta-Footer {
@@ -1883,12 +1894,9 @@ footer .marquee-container {
   margin-top: calc(100vh / 10);
 }
 
-@media screen and (max-width: 975px) {
+@media screen and (max-width: 991px) {
 
   .footer-icons {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
     gap: 20px;
     border-left: none;
     padding: 35px 0;
@@ -1910,10 +1918,6 @@ footer .marquee-container {
 
 @media screen and (max-width: 550px) {
   
-  .footer-icons div {
-    display: flex;
-    flex-direction: column;
-  }
 
   .meta-Footer {
     margin-top: calc(100vh / 15);
