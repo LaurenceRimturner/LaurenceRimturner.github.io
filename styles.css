@@ -56,8 +56,8 @@
   font-family: "Montserrat", sans-serif;
   color: var(--main-font-color);
   user-select: none;
-  /* border-radius: 2px; */
-  transition: background-color .5s cubic-bezier(0.32, 0.76, 0.32, 0.76), color .5s cubic-bezier(0.32, 0.76, 0.32, 0.76), fill .25s cubic-bezier(0.32, 0.76, 0.32, 0.76), border .25s cubic-bezier(0.32, 0.76, 0.32, 0.76);
+  -webkit-user-drag: none;
+  transition: background-color .5s cubic-bezier(0.32, 0.76, 0.32, 0.76), color .5s cubic-bezier(0.32, 0.76, 0.32, 0.76), fill .5s cubic-bezier(0.32, 0.76, 0.32, 0.76), border .5s cubic-bezier(0.32, 0.76, 0.32, 0.76), transform .5s cubic-bezier(0.32, 0.76, 0.32, 0.76);
 }
 
 
@@ -70,6 +70,8 @@ body {
   background-color: var(--main-font-color);
 }
 
+
+
 #MouseEventElement {
   position: fixed;
   top: 50%;
@@ -77,12 +79,30 @@ body {
   transform: translate(-50%, -50%);
   height: 20px;
   width: 20px;
-  border-radius: 50%;
+  overflow: hidden;
+  border-radius: 50px;
   pointer-events: none;
   z-index: 9999 !important;
   backdrop-filter: invert(100%);
-  transition: width 0.2s linear, height 0.2s linear;
+  transition: width 0.2s cubic-bezier(0.32, 0.76, 0.32, 0.76), height 0.2s cubic-bezier(0.32, 0.76, 0.32, 0.76);
 }
+
+.LoadingscreenCursor {
+  display: grid;
+  grid-template-columns: repeat(4, 400px); /* 4 Columns */
+  grid-template-rows: repeat(3, 400px);    /* 3 Rows */
+  transition: transform 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76);
+  will-change: transform;
+}
+
+.LoadingscreenCursor img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+
 
 @media only screen and (max-width: 1024px) {
   #MouseEventElement {
@@ -101,7 +121,7 @@ h5 {
 }
 
 b {
-  color: var(--main-white);
+  color: #fdfdfd;
 }
 
 a {
@@ -156,7 +176,6 @@ h5 {
 .section {
   padding: 15vh 0;
   scroll-margin-top: 10vh;
-  background-color: var(--main-white);
 }
 
 .container {
@@ -627,6 +646,11 @@ body:has(.loadingScreen){
   transform: scale(1);
 }
 
+body:has(.loadingScreen) #MouseEventElement {
+  border-radius: 0 ;
+  height: 400px;
+  width: 400px;
+}
 
 .loadingScreen-hidden {
   transform: scale(.975);
@@ -657,7 +681,7 @@ body:has(.loadingScreen){
   flex-direction: column;
   transform: translateY(90px);
   gap: 120px;
-  transition: transform .75s cubic-bezier(0.32, 0.76, 0.32, 0.76);
+
 }
 
 .loadingScreen .innerLoadingScreenDiv.active{
@@ -686,22 +710,22 @@ body:has(.loadingScreen){
   text-align: end;
 }
 
-.LoadingscreenCursor {
+/* .LoadingscreenCursor {
   position: absolute;
   height: auto;
   width: auto;
   top: 50%;
   left: 50%;
-  /* background-color: var(--theme-color); */
+  background-color: var(--theme-color);
   transform: translate(-50%, -50%);
   z-index: -1;
   transition: width 1s cubic-bezier(0.32, 0.76, 0.32, 0.76), height  1s cubic-bezier(0.32, 0.76, 0.32, 0.76); 
-}
+} */
 
-.LoadingscreenCursor img{
+/* .LoadingscreenCursor img{
   height: 50vh;
   width: auto;
-}
+} */
 
 @media only screen and (max-width: 576px) {
   .loadingScreen .loadingScreenDiv {
@@ -1106,7 +1130,6 @@ body:has(.loadingScreen){
   padding: 125px 0;
   overflow: hidden;
   transition: all 0.75s cubic-bezier(0.32, 0.76, 0.32, 0.76);
-  background-color: var(--main-font-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1190,7 +1213,7 @@ body:has(.loadingScreen){
 /* Content-Boxes */
 .content-section {
   transform: scale3d(0.8, 0.8, 0.8);
-  transition: transform 0.75s cubic-bezier(0.32, 0.76, 0.32, 0.76);
+  background-color: var(--main-white);
 }
 
 .grid-container {
@@ -1216,7 +1239,6 @@ body:has(.loadingScreen){
   padding: 20px;
   display: flex;
   position: relative;
-  transition: transform .5s cubic-bezier(0.32, 0.76, 0.32, 0.76);
   transform: scale(1);
 }
 
@@ -1300,8 +1322,6 @@ body:has(.loadingScreen){
   grid-column: 2 / 3;
   grid-row: 3 / 4;
   padding: 0;
-  background-color: var(--theme-color);
-  background-image: url(./assets/Images/BG-test.png);
   background-size: 200%;
   background-repeat: no-repeat;
   background-position: center;
@@ -1425,7 +1445,7 @@ height: 100%;
 
 .Note p {
   font-size: 21px;
-  color: var(--main-white);
+  color: #fdfdfd;
 }
 
 
@@ -1923,12 +1943,4 @@ footer .marquee-container {
     margin-top: calc(100vh / 15);
     padding: 20px;
   }
-}
-
-/* EasterEgg */
-
-#snake-canvas {
-  bottom: 50% !important;
-  right: 50% !important;
-  transform: translate(50%, 50%);
 }
