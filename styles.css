@@ -71,7 +71,6 @@ body {
 }
 
 
-
 #MouseEventElement {
   position: fixed;
   top: 50%;
@@ -79,12 +78,19 @@ body {
   transform: translate(-50%, -50%);
   height: 20px;
   width: 20px;
-  overflow: hidden;
   border-radius: 50px;
   pointer-events: none;
   z-index: 9999 !important;
   backdrop-filter: invert(100%);
   transition: width 0.2s cubic-bezier(0.32, 0.76, 0.32, 0.76), height 0.2s cubic-bezier(0.32, 0.76, 0.32, 0.76);
+}
+
+
+body:has(.loadingScreen) #MouseEventElement {
+  border-radius: 0 ;
+  height: 400px;
+  width: 400px;
+  overflow: hidden;
 }
 
 .LoadingscreenCursor {
@@ -95,13 +101,12 @@ body {
   will-change: transform;
 }
 
-.LoadingscreenCursor img {
+body:has(.loadingScreen) .LoadingscreenCursor img {
   width: 400px;
   height: 400px;
   object-fit: cover;
   pointer-events: none;
 }
-
 
 
 @media only screen and (max-width: 1024px) {
@@ -644,12 +649,6 @@ body:has(.loadingScreen){
   cursor: none;
   opacity: 1;
   transform: scale(1);
-}
-
-body:has(.loadingScreen) #MouseEventElement {
-  border-radius: 0 ;
-  height: 400px;
-  width: 400px;
 }
 
 .loadingScreen-hidden {
