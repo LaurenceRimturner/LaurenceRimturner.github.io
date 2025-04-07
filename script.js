@@ -280,8 +280,7 @@ window.addEventListener("load", () => {
   setInterval(() => randomQuoteLoading(funnyQuotes), 1200); // Quotes wechsel
 
 
-  let cursorImgs = [
-    // "./assets/Images/LoadingImg/CSD-Frau.jpg",
+  const cursorImgs = [
     "./assets/Images/LoadingImg/CSD-PotsdamerPlatz.jpg",
     "./assets/Images/LoadingImg/CSD-Saeule.jpg",
     "./assets/Images/LoadingImg/Flix-Berlin.jpg",
@@ -294,20 +293,48 @@ window.addEventListener("load", () => {
     "./assets/Images/LoadingImg/Luebeck-Reflektion-Vase.jpg",
     "./assets/Images/LoadingImg/Luebeck-Parkhaus.jpg",
     "./assets/Images/LoadingImg/Luebeck-Gebaeude.jpg"
-  ]
-  const maxImg = cursorImgs.length;
-
-  function randomImgLoading() {
-    const randomIndex = Math.floor(Math.random() * maxImg);
-    const randomSrcIndex = cursorImgs[randomIndex];
-    LoadingscreenCursor.innerHTML = `<img loading="eager" src="${randomSrcIndex}">`
-  }
-  setInterval(() => randomImgLoading(cursorImgs), 750);
-
-
+  ];
+  
+  const columns = 4;
+  const rows = 3;
+  const imgWidth = 400;
+  const imgHeight = 400;
+  
+  const container = document.querySelector(".LoadingscreenCursor");
+  
+  // Bilder einfügen
+  cursorImgs.forEach((src) => {
+    const img = document.createElement("img");
+    img.src = src;
+    img.loading = "eager";
+    container.appendChild(img);
+  });
+  
+  const maxColIndex = columns - 1;
+  const maxRowIndex = rows - 1;
+  
+  const mouseArea = document.getElementById("MouseEventElement");
+  
+  document.addEventListener("mousemove", (e) => {
+    const { innerWidth: w, innerHeight: h } = window;
+  
+    // Maus → Spalten- & Zeilen-Index
+    const col = Math.floor((e.clientX / w) * columns);
+    const row = Math.floor((e.clientY / h) * rows);
+  
+    const offsetX = col * -imgWidth;
+    const offsetY = row * -imgHeight;
+  
+    container.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+  
+    // Positioniere den Maus-Container mit
+    mouseArea.style.left = `${e.clientX}px`;
+    mouseArea.style.top = `${e.clientY}px`;
+  });
+  
 
   let startTime = performance.now();
-  let duration = 10; // 5000
+  let duration = 5000; // 5000
 
   function easeInOutCubic(t) {
     return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
@@ -338,11 +365,13 @@ window.addEventListener("load", () => {
   
   function enableClickEvent() {
     loadingScreen.addEventListener("click", () => {
+          MouseEventElement.style.width = "20px"
+          MouseEventElement.style.height = "20px"
+          MouseEventElement.style.borderRadius = "50px"          
       if (loadingScreen.parentNode) {
         const hiddenLoadingScreen = document.querySelector(".loadingScreen-hidden");
         if (hiddenLoadingScreen) {
           hiddenLoadingScreen.style.top = "-120vh"
-
         }
         MouseEventElement.removeChild(LoadingscreenCursor);
         setTimeout(() => {
@@ -793,8 +822,36 @@ document.addEventListener("DOMContentLoaded", () => {
   scaleObserver.observe(contentSection);
 });
 
+// Geheimer DevMode
 
-// Minigame
+// let trueHack = false;
+
+// document.addEventListener("keydown", function(e) {
+//   const root = document.documentElement;
+//   const everything = document.getElementsByTagName("*");
+
+//   if (e.shiftKey && e.key === "G") {
+//     if (trueHack === false) {
+//       trueHack = true;
+//       root.style.setProperty("--main-font-color", "#00ff00");
+//       root.style.setProperty("--theme-color", "#2d2d2d");
+//       for (let el of everything) {
+//         el.style.border = "2px #00ff00 solid";
+//         el.style.fontFamily = "monospace";
+//       }
+//       console.log("%c👀 Schön, dass du dir den Code anschaust!", "color: hotpink; font-size: 16px;");
+//       console.log("→ Du kannst auch %cShift + G%c drücken, um den geheimen Dev-Modus zu sehen.", "color: cyan;", "color: unset;");
+//     } else {
+//       for (let el of everything) {
+//         el.style.border = "none";
+//         el.style.fontFamily = "";
+//       }
+//       trueHack = false;
+//       root.style.setProperty("--main-font-color", "#2c2c2c");
+//       root.style.setProperty("--theme-color", "#2c55d8");
+//     }
+//   }
+// });
 
 const konamiCode = [
   "ArrowUp", "ArrowUp",
