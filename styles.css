@@ -1924,3 +1924,11 @@ footer .marquee-container {
     padding: 20px;
   }
 }
+
+/* EasterEgg */
+
+#snake-canvas {
+  bottom: 50% !important;
+  right: 50% !important;
+  transform: translate(50%, 50%);
+}
