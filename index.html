@@ -1,5 +1,5 @@
 <!-- 
-Konami kennt den Code
+Konami kennt das Geheimnis
 🔼🔼🔽🔽◀️▶️◀️▶️ 🅱 🅰
 -->
 
@@ -20,6 +20,10 @@ Konami kennt den Code
      <title>Laurin Felgendreher - Media Designer | Junior-Frontend-Developer </title>
    </head>
    <body>
+
+    <canvas id="snake-canvas" width="300" height="300"
+        style="display: none; position: fixed; bottom: 50%; right: 50%; border: 2px solid lime; z-index: 9999; background: #000;  transform: translate(50%, 50%);">
+    </canvas>
      <div class="loadingScreen">
         <div class="loadingScreenDiv">
           <div class="innerLoadingScreenDiv">
@@ -33,7 +37,7 @@ Konami kennt den Code
       </div>
 
       </div>
-       <div id="MouseEventElement" class="cursor-wrapper">
+      <div id="MouseEventElement" class="cursor-wrapper">
         <div class="LoadingscreenCursor"></div>
       </div>
      <header>
@@ -319,13 +323,13 @@ Konami kennt den Code
              </div>
              <svg xmlns="http://www.w3.org/2000/svg"   stroke-width="5px" width="175" height="75" viewBox="0 0 64 64"><path stroke-width="5px" stroke="#fdfdfd" fill="#fdfdfd" d="M15 51.3c-.6 0-1.2-.2-1.6-.7c-.9-.9-.9-2.3 0-3.2l30.3-30.3H19.5c-1.2 0-2.2-1-2.2-2.2s1-2.2 2.2-2.2H49c1.2 0 2.2 1 2.2 2.2v29.7c0 1.2-1 2.2-2.2 2.2s-2.2-1-2.2-2.2V20.5L16.6 50.7c-.4.4-1 .6-1.6.6"/></svg>
            </a>
-           <a class="item2" href="./assets/Images/freeCodeCamp-Zertifikat.JPG" target="_blank" rel="noopener noreferrer nofollow">
+           <a class="item2">
             <p class="categoryTag">Weiterbildung</p>
              <h3>FreeCodeCamp <br> Zertifikat</h3>
              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24"><path fill="var(--main-white)" d="M19.885 3.906a.62.62 0 0 0-.354.12c-.08.08-.161.196-.161.313c0 .2.236.474.673.923c1.822 1.754 2.738 3.903 2.732 6.494c-.007 2.867-.97 5.17-2.844 6.954c-.394.353-.556.63-.557.867c0 .116.08.237.16.353a.58.58 0 0 0 .353.162c.434 0 1.04-.512 1.833-1.509c1.542-1.89 2.24-3.978 2.279-6.824c.036-2.847-.857-4.777-2.603-6.77c-.63-.712-1.153-1.082-1.511-1.083m-15.769.002c-.358 0-.882.37-1.51 1.083C.858 6.984-.035 8.914.001 11.761c.04 2.846.737 4.933 2.28 6.824c.791.997 1.398 1.51 1.832 1.509a.57.57 0 0 0 .352-.162c.08-.116.16-.237.16-.353c0-.237-.162-.514-.556-.866c-1.873-1.785-2.837-4.087-2.844-6.955c-.006-2.591.91-4.74 2.732-6.494c.437-.449.674-.722.673-.923c0-.117-.08-.233-.161-.313a.62.62 0 0 0-.354-.12zm7.056.895s.655 2.081-2.649 6.727c-3.156 4.433 1.045 7.15 1.432 7.386c-.281-.18-2.001-1.5.402-5.423c.466-.77 1.076-1.47 1.834-3.041c0 0 .67.946.32 2.998c-.523 3.101 2.271 2.214 2.314 2.257c.976 1.15-.808 3.17-.917 3.233c-.108.061 5.096-3.13 1.399-7.935c-.253.253-.582 1.442-1.267 1.266c-.684-.174 2.125-3.494-2.868-7.468M9.955 18.916q.036.024.038.024z"/></svg>
            </a>
            <div class="item3">
-            <!-- <?xml version="1.0" encoding="UTF-8"?><svg id="Ebene_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 220"><defs><style>.cls-1{fill:none;}.cls-1,.cls-2{stroke-width:0px;}.cls-2{fill:var(--theme-color);}</style></defs><g id="Ebene_2-2"><polygon class="cls-1" points="201.09 220 421.08 0 388.89 0 168.89 220 201.09 220"/><polygon class="cls-1" points="351.06 220 440 131.06 440 98.86 318.87 220 351.06 220"/><polygon class="cls-1" points="51.11 220 271.11 0 238.91 0 18.92 220 51.11 220"/><polygon class="cls-1" points="126.1 220 346.1 0 313.9 0 93.9 220 126.1 220"/><polygon class="cls-1" points="388.55 220 440 168.55 440 136.36 356.36 220 388.55 220"/><polygon class="cls-1" points="88.61 220 308.6 0 276.41 0 56.41 220 88.61 220"/><polygon class="cls-1" points="313.57 220 440 93.56 440 61.37 281.37 220 313.57 220"/><polygon class="cls-1" points="163.59 220 383.59 0 351.39 0 131.4 220 163.59 220"/><polygon class="cls-1" points="238.58 220 440 18.58 440 0 426.38 0 206.39 220 238.58 220"/><polygon class="cls-1" points="276.07 220 440 56.07 440 23.88 243.88 220 276.07 220"/><polygon class="cls-1" points="0 0 0 8.65 8.65 0 0 0"/><polygon class="cls-1" points="126.43 0 0 126.44 0 158.63 158.63 0 126.43 0"/><polygon class="cls-1" points="13.95 0 0 13.95 0 46.15 46.15 0 13.95 0"/><polygon class="cls-1" points="163.93 0 0 163.93 0 196.12 196.12 0 163.93 0"/><polygon class="cls-1" points="88.94 0 0 88.94 0 121.14 121.13 0 88.94 0"/><polygon class="cls-1" points="440 220 440 211.35 431.35 220 440 220"/><polygon class="cls-1" points="426.05 220 440 206.05 440 173.85 393.85 220 426.05 220"/><polygon class="cls-1" points="51.45 0 0 51.45 0 83.64 83.64 0 51.45 0"/><polygon class="cls-1" points="201.42 0 0 201.42 0 220 13.62 220 233.61 0 201.42 0"/><polygon class="cls-2" points="93.9 220 313.9 0 308.6 0 88.61 220 93.9 220"/><polygon class="cls-2" points="196.12 0 0 196.12 0 201.42 201.42 0 196.12 0"/><polygon class="cls-2" points="238.91 0 233.61 0 13.62 220 18.92 220 238.91 0"/><polygon class="cls-2" points="56.41 220 276.41 0 271.11 0 51.11 220 56.41 220"/><polygon class="cls-2" points="121.13 0 0 121.14 0 126.44 126.43 0 121.13 0"/><polygon class="cls-2" points="46.15 0 0 46.15 0 51.45 51.45 0 46.15 0"/><polygon class="cls-2" points="83.64 0 0 83.64 0 88.94 88.94 0 83.64 0"/><polygon class="cls-2" points="8.65 0 0 8.65 0 13.95 13.95 0 8.65 0"/><polygon class="cls-2" points="158.63 0 0 158.63 0 163.93 163.93 0 158.63 0"/><polygon class="cls-2" points="356.36 220 440 136.36 440 131.06 351.06 220 356.36 220"/><polygon class="cls-2" points="393.85 220 440 173.85 440 168.55 388.55 220 393.85 220"/><polygon class="cls-2" points="431.35 220 440 211.35 440 206.05 426.05 220 431.35 220"/><polygon class="cls-2" points="318.87 220 440 98.86 440 93.56 313.57 220 318.87 220"/><polygon class="cls-2" points="206.39 220 426.38 0 421.08 0 201.09 220 206.39 220"/><polygon class="cls-2" points="168.89 220 388.89 0 383.59 0 163.59 220 168.89 220"/><polygon class="cls-2" points="243.88 220 440 23.88 440 18.58 238.58 220 243.88 220"/><polygon class="cls-2" points="281.37 220 440 61.37 440 56.07 276.07 220 281.37 220"/><polygon class="cls-2" points="131.4 220 351.39 0 346.1 0 126.1 220 131.4 220"/></g></svg> -->
+            <?xml version="1.0" encoding="UTF-8"?><svg id="Ebene_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 225"><defs><style>.cls-1{fill:none;}.cls-1,.cls-2{stroke-width:0px;}.cls-2{fill:var(--theme-color);}</style></defs><g id="Ebene_1-2"><polygon class="cls-1" points="155.75 225 375 5.74 375 0 332.24 0 107.24 225 155.75 225"/><polygon class="cls-1" points="162.76 0 0 162.76 0 211.27 211.27 0 162.76 0"/><polygon class="cls-1" points="219.25 0 0 219.26 0 225 42.76 225 267.76 0 219.25 0"/><polygon class="cls-1" points="375 225 375 183.21 333.21 225 375 225"/><polygon class="cls-1" points="106.27 0 0 106.27 0 154.78 154.78 0 106.27 0"/><polygon class="cls-1" points="212.24 225 375 62.24 375 13.73 163.73 225 212.24 225"/><polygon class="cls-1" points="99.26 225 324.25 0 275.74 0 50.75 225 99.26 225"/><polygon class="cls-1" points="325.22 225 375 175.22 375 126.71 276.72 225 325.22 225"/><polygon class="cls-1" points="0 0 0 41.79 41.79 0 0 0"/><polygon class="cls-1" points="268.73 225 375 118.73 375 70.22 220.22 225 268.73 225"/><polygon class="cls-1" points="49.78 0 0 49.78 0 98.29 98.28 0 49.78 0"/><polygon class="cls-2" points="275.74 0 267.76 0 42.76 225 50.75 225 275.74 0"/><polygon class="cls-2" points="98.28 0 0 98.29 0 106.27 106.27 0 98.28 0"/><polygon class="cls-2" points="154.78 0 0 154.78 0 162.76 162.76 0 154.78 0"/><polygon class="cls-2" points="211.27 0 0 211.27 0 219.26 219.25 0 211.27 0"/><polygon class="cls-2" points="41.79 0 0 41.79 0 49.78 49.78 0 41.79 0"/><polygon class="cls-2" points="220.22 225 375 70.22 375 62.24 212.24 225 220.22 225"/><polygon class="cls-2" points="163.73 225 375 13.73 375 5.74 155.75 225 163.73 225"/><polygon class="cls-2" points="276.72 225 375 126.71 375 118.73 268.73 225 276.72 225"/><polygon class="cls-2" points="333.21 225 375 183.21 375 175.22 325.22 225 333.21 225"/><polygon class="cls-2" points="107.24 225 332.24 0 324.25 0 99.26 225 107.24 225"/></g></svg>
            </div>
            <!-- <div class="item4">             
             <h3>Hier Platz frei</h3></div>
@@ -371,11 +375,11 @@ Konami kennt den Code
             </ul>
            </div>
            <div class="item9">
-            <p class="categoryTag">Musikalische Begleitung</p>
+            <p class="categoryTag">Spotify Playlist</p>
             <div>
               <div>              
-                <h3>Spotify</h3>
-                <p><b>Struktur. Rhythmus. Fokus.</b> – Musik die den Flow am Laufen hält.</p>
+                <h3>Flow State</h3>
+                <p><b>Struktur. Rhythmus. Fokus.</b> Musik die den Flow am Laufen hält.</p>
               </div>
               <a href="https://open.spotify.com/playlist/3Vx1IYaiBeNLhPR4tiHxGg?si=9a0ee50c39d8445a&pt=8deb67f0fc67581358d401cdc671d96b" target="_blank" rel="noopener noreferrer nofollow"
               ><svg width="100%" height="100" viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -474,6 +478,7 @@ Konami kennt den Code
            <div style="padding: 0;" class="col col-xsm-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="meta-Footer">
               <p>Design mit Haltung – durchdacht, gestaltet, realisiert.</p>
+              <p style="font-size: 12px;">P.S.: Wer gerne in Quellcodes stöbert, könnte hier mehr entdecken… 👀</p>
             </div> 
           </div>
          </div>
