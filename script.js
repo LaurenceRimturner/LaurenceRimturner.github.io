@@ -301,8 +301,7 @@ window.addEventListener("load", () => {
   const imgHeight = 400;
   
   const container = document.querySelector(".LoadingscreenCursor");
-  
-  // Bilder einfügen
+
   cursorImgs.forEach((src) => {
     const img = document.createElement("img");
     img.src = src;
@@ -318,7 +317,6 @@ window.addEventListener("load", () => {
   document.addEventListener("mousemove", (e) => {
     const { innerWidth: w, innerHeight: h } = window;
   
-    // Maus → Spalten- & Zeilen-Index
     const col = Math.floor((e.clientX / w) * columns);
     const row = Math.floor((e.clientY / h) * rows);
   
@@ -327,14 +325,13 @@ window.addEventListener("load", () => {
   
     container.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
   
-    // Positioniere den Maus-Container mit
     mouseArea.style.left = `${e.clientX}px`;
     mouseArea.style.top = `${e.clientY}px`;
   });
   
 
   let startTime = performance.now();
-  let duration = 5000; // 5000
+  let duration = 10; // 5000
 
   function easeInOutCubic(t) {
     return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
@@ -399,7 +396,7 @@ window.addEventListener("load", () => {
         if (distInView < 20) {
           setTimeout(() => {
             el.classList.add("visible");
-          }, 50 + index * 50); // Element fade Pace
+          }, 50 + index * 25); // Element fade Pace
         }
         //  else {
         //     el.classList.remove("visible");
@@ -708,6 +705,7 @@ function checkBoundary() {
     );
   }
 }
+
 checkBoundary();
 
 //Modal
@@ -725,7 +723,7 @@ itemContainer.addEventListener("mouseenter", () => {
     MouseEventElement.appendChild(modalImgLoad);
 
     setTimeout(() => {
-      modalImgLoad.classList.add("active");
+      modalImgLoad.classList.add("preview");
     }, 10);
   }
 });
@@ -734,7 +732,7 @@ itemContainer.addEventListener("mouseleave", () => {
   const modalImgLoad = document.querySelector(".modal-img");
   
   if (modalImgLoad) {
-    modalImgLoad.classList.remove("active");
+    modalImgLoad.classList.remove("preview");
 
     setTimeout(() => {
       modalImgLoad.remove();
@@ -742,6 +740,27 @@ itemContainer.addEventListener("mouseleave", () => {
   }
 });
 
+itemContainer.addEventListener("click", () => {
+  let modalImgFullLoad = document.querySelector(".modal-img-full");
+
+  if (!modalImgFullLoad) {
+    modalImgFullLoad = document.createElement("div");
+    modalImgFullLoad.classList.add("modal-img-full");
+
+    const img = document.createElement("img");
+    img.src = "./assets/Images/freeCodeCamp-Zertifikat.JPG";
+    img.alt = "FreeCodeCamp Zertifikat | JavaScript";
+
+    modalImgFullLoad.appendChild(img);
+    document.body.appendChild(modalImgFullLoad);
+
+    modalImgFullLoad.addEventListener("click", () => {
+      modalImgFullLoad.remove();
+    });
+  }
+});
+
+//Modal Work
 
 const workOuterContainer = document.querySelector(".work-OuterContainer");
 const implementationDiv = document.querySelector("#implementation");
@@ -867,7 +886,7 @@ document.addEventListener("keydown", (e) => {
   keys.splice(-konamiCode.length - 1, keys.length - konamiCode.length);
 
   if (konamiCode.every((v, i) => v === keys[i])) {
-    activateEasterEgg(); // 🔓
+    activateEasterEgg();
   }
 });
 
