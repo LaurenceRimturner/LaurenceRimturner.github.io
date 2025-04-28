@@ -33,7 +33,6 @@ Ich bin leidenschaftlicher Mediengestalter mit einem starken Gespür für Ästhe
 - Git & GitHub
 - Responsive Design / Mobile First
 
----
 
 ### “Failure is only the opportunity to begin again. Only this time, more wisely.” ― Uncle Iroh ###
 
