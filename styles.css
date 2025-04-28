@@ -151,6 +151,7 @@ h1,
 .headerBold {
   font-size: 150px;
   line-height: 135px;
+  color: var(--main-white);
   font-style: italic;
   font-weight: 300;
   font-family: "Besley", serif;
