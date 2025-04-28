@@ -250,6 +250,7 @@ h5 {
  .headerBold {
     font-size: 45px;
     line-height: 50px;
+    font-weight: 600;
   }
 
   h4 {
