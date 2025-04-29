@@ -15,7 +15,26 @@
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⠿⠿⠿⠛⠉
 
 
-//Nav Scroll
+    // Table of Content
+
+    // 1. NavBarScroll Effect
+    // 2. Hover Effect
+    // 3. Theme Change
+    // 4. DarkMode
+    // 5. NameChange
+    // 6. Follow Cursor
+    // 7. LoadingScreen
+    // 8. Fade-In Effect
+    // 9. Datum
+    // 10. Letter Fade-in Effect
+    // 11. SoftSkillsSlideShow
+    // 12. Modal Zertifikat
+    // 13. Modal Arbeitsproben
+    // 14. Section Scale
+    // 14. Geheimer DevMode
+
+
+// NavBarScroll Effect
 window.addEventListener("scroll", function () {
   let header = document.querySelector(".nav-bar");
   header.classList.toggle("is_sticky", window.scrollY > 20); 
@@ -39,7 +58,7 @@ function addLetterEffects() {
   });
 }
 
-//Themen Wechsel
+// Theme Change
 const themes = [
   {
     color: "#2C55D8",
@@ -147,7 +166,6 @@ function darkMode() {
     root.style.setProperty("--main-font-color", "#fdfdfd");
     root.style.setProperty("--main-white", "#2C2C2C");
     darkModeBtn.innerHTML = "😎";
-    // navBar.style.boxShadow = "0px 0px 15px var(--theme-color)";
     iconColors.forEach((icon) => {
       icon.style.filter = "invert(1)";
     });
@@ -155,7 +173,6 @@ function darkMode() {
     root.style.setProperty("--main-font-color", "#2C2C2C");
     root.style.setProperty("--main-white", "#fdfdfd");
     darkModeBtn.innerHTML = "🙂";
-    // navBar.style.boxShadow = "none";
     iconColors.forEach((icon) => {
       icon.style.filter = "invert(0)";
     });
@@ -187,6 +204,7 @@ if (nameTag) {
 }
 
 //Follow Cursor
+
 const anchorPoints = document.querySelectorAll("a, .item1, .letterFX-tag");
 const MouseEventElement = document.getElementById("MouseEventElement");
 
@@ -229,7 +247,7 @@ setTimeout(() => {
   }
 }, 20);
 
-// loadingScreen
+// LoadingScreen
 
 window.addEventListener("load", () => {
   const loadingScreen = document.querySelector(".loadingScreen");
@@ -383,7 +401,7 @@ window.addEventListener("load", () => {
   requestAnimationFrame(countUp);
   
 
-  //Fade In
+  //Fade-In Effect
 
   function fadeInElements() {
     const elements = document.querySelectorAll(".fade");
@@ -404,12 +422,13 @@ window.addEventListener("load", () => {
       });
     }
 
-    fadeIn(); // Direkt prüfen bei Seitenaufruf
+    fadeIn();
     window.addEventListener("scroll", fadeIn);
   }
 });
 
 // Datum
+
 const workingHours = document.querySelectorAll(".workingHours");
 const HoursContent = document.querySelectorAll(".workingHoursContent");
 
@@ -513,7 +532,8 @@ function setTransition() {
   }, tiltEffectSettings.speed);
 }
 
-// Fade Typo
+
+// Letter Fade-in Effect
 
 const fadeContainer = document.querySelector(".fade-container");
 const fadeSection = document.querySelector("#fade-section");
@@ -526,7 +546,6 @@ let isSectionVisible = false;
 const startOffset = 0.1; // Startet 10% vor der Mitte (kleiner = früher)
 const endOffset = 0.5; // Endet 50% nach der Mitte (größer = später)
 
-// 1️⃣ IntersectionObserver → Prüft, ob Section grob sichtbar ist
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -585,7 +604,8 @@ window.addEventListener("scroll", () => {
   }
 });
 
-//SkillsSlideShow
+//SoftSkillsSlideShow
+
 const slideShowSection = document.querySelector(".item6");
 const slideShowContainer = document.querySelector(".innerSlider");
 const slideShowIcons = document.querySelectorAll(".innerSlider img");
@@ -594,11 +614,9 @@ let pressed = false;
 let startX;
 let xOffset = 0;
 
-// Funktion zum Klonen der Slides für einen unendlichen Effekt
 const cloneSlides = () => {
   const slides = Array.from(slideShowContainer.children);
 
-  // Falls schon geklont wurde, nicht erneut klonen
   if (slideShowContainer.dataset.cloned) return;
 
   slides.forEach((slide) => {
@@ -614,7 +632,7 @@ const cloneSlides = () => {
   slideShowContainer.dataset.cloned = "true";
 };
 
-cloneSlides(); // Nur einmal aufrufen
+cloneSlides();
 
 // Intersection Observer für Animationseffekte
 const slideObserver = new IntersectionObserver(
@@ -623,9 +641,9 @@ const slideObserver = new IntersectionObserver(
       if (entry.isIntersecting) {
         entry.target.classList.add("show");
       } 
-      // else {
-      //   entry.target.classList.remove("show");
-      // }
+      else {
+        entry.target.classList.remove("show");
+      }
     });
   },
   { threshold: 0.5 }
@@ -645,19 +663,15 @@ slideShowSection.addEventListener("mouseleave", () => {
   MouseEventElement.style.height = "20px";
 });
 
-// Drag-Funktion für Slider
-// Start-Ereignis (Maus oder Touch)
 function startDrag(e) {
   pressed = true;
   startX = (e.touches ? e.touches[0].clientX : e.clientX) - slideShowContainer.offsetLeft;
 }
 
-// Ende-Ereignis (Maus oder Touch)
 function endDrag() {
   pressed = false;
 }
 
-// Bewegung-Ereignis (Maus oder Touch)
 function moveDrag(e) {
   if (!pressed) return;
   e.preventDefault();
@@ -708,7 +722,7 @@ function checkBoundary() {
 
 checkBoundary();
 
-//Modal
+// Modal Zertifikat
 const itemContainer = document.querySelector(".item2");
 
 itemContainer.addEventListener("mouseenter", () => {
@@ -760,7 +774,7 @@ itemContainer.addEventListener("click", () => {
   }
 });
 
-//Modal Work
+// Modal Arbeitsproben
 
 const workOuterContainer = document.querySelector(".work-OuterContainer");
 const implementationDiv = document.querySelector("#implementation");
@@ -842,35 +856,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Geheimer DevMode
-
-// let trueHack = false;
-
-// document.addEventListener("keydown", function(e) {
-//   const root = document.documentElement;
-//   const everything = document.getElementsByTagName("*");
-
-//   if (e.shiftKey && e.key === "G") {
-//     if (trueHack === false) {
-//       trueHack = true;
-//       root.style.setProperty("--main-font-color", "#00ff00");
-//       root.style.setProperty("--theme-color", "#2d2d2d");
-//       for (let el of everything) {
-//         el.style.border = "2px #00ff00 solid";
-//         el.style.fontFamily = "monospace";
-//       }
-//       console.log("%c👀 Schön, dass du dir den Code anschaust!", "color: hotpink; font-size: 16px;");
-//       console.log("→ Du kannst auch %cShift + G%c drücken, um den geheimen Dev-Modus zu sehen.", "color: cyan;", "color: unset;");
-//     } else {
-//       for (let el of everything) {
-//         el.style.border = "none";
-//         el.style.fontFamily = "";
-//       }
-//       trueHack = false;
-//       root.style.setProperty("--main-font-color", "#2c2c2c");
-//       root.style.setProperty("--theme-color", "#2c55d8");
-//     }
-//   }
-// });
 
 const konamiCode = [
   "ArrowUp", "ArrowUp",
