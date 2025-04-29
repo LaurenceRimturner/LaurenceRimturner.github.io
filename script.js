@@ -523,7 +523,6 @@ heroImgSection.addEventListener("mouseleave", () => {
   setTransition();
 });
 
-// 🚀 Transition nur bei Enter & Leave
 function setTransition() {
   heroImg.style.transition = `transform ${tiltEffectSettings.speed}ms ${tiltEffectSettings.easing}`;
   clearTimeout(heroImg.transitionTimeoutId);
@@ -539,36 +538,58 @@ const fadeContainer = document.querySelector(".fade-container");
 const fadeSection = document.querySelector("#fade-section");
 const containers = document.querySelectorAll(".container");
 const letters = document.querySelectorAll(".fade-letter-tag span");
+const contentSection = document.querySelector(".content-section");
 
 let isSectionVisible = false;
 
-// 📝 Konfiguration → Hier kannst du "Geschwindigkeit" einstellen
-const startOffset = 0.1; // Startet 10% vor der Mitte (kleiner = früher)
-const endOffset = 0.5; // Endet 50% nach der Mitte (größer = später)
+const startOffset = 0; // Startet 10% vor der Mitte (kleiner = früher)
+const endOffset = .5; // Endet 50% nach der Mitte (größer = später)
 
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       isSectionVisible = entry.isIntersecting;
       if (isSectionVisible) {
-        fadeContainer.classList.add("active");
-        fadeSection.classList.add("active");
+        // fadeContainer.classList.add("active");
+        // fadeSection.classList.add("active");
       } else {
-        fadeContainer.classList.remove("active");
-        fadeSection.classList.remove("active");
+        // fadeContainer.classList.remove("active");
+        // fadeSection.classList.remove("active"); // Es gibt keine Active Klasse ????
       }
     });
   },
-  { threshold: 0 }
+  { threshold: 0
+   }
 );
 
 observer.observe(fadeContainer);
 
-// 2️⃣ Scroll-Logik → Steuert Progress mit Offsets
+let isContentVisible = false;
+
+const contentObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      isContentVisible = entry.isIntersecting;
+
+      if (isContentVisible) {
+        letters.forEach((letter) => letter.classList.remove("visible"));
+
+        setTimeout(() => {
+          fadeSection.style.position = "relative";
+        }, 500);
+      } else {
+        fadeSection.style.position = "sticky";
+      }
+    });
+  },
+  { threshold: 0.1 }
+);
+
+
+contentObserver.observe(contentSection);
+
 window.addEventListener("scroll", () => {
-  if (!isSectionVisible) {
-    return;
-  }
+  if (!isSectionVisible) return;
 
   const rect = fadeContainer.getBoundingClientRect();
   const sectionHeight = fadeContainer.offsetHeight;
@@ -577,16 +598,13 @@ window.addEventListener("scroll", () => {
   const viewportMid = viewportHeight / 2;
   const distanceToMid = viewportMid - rect.top;
 
-  // Progress von startOffset bis endOffset skalieren
   const rawProgress = distanceToMid / sectionHeight;
   const scaledProgress =
     (rawProgress - startOffset) / (endOffset - startOffset);
-  const progress = Math.min(Math.max(scaledProgress, 0), 1); // Clamp zwischen 0 und 1
+  const progress = Math.min(Math.max(scaledProgress, 0), 1);
 
-  // Buchstaben je nach Fortschritt anzeigen/verbergen
   letters.forEach((letter, index) => {
     const triggerPoint = (index + 1) / letters.length;
-
     if (progress >= triggerPoint) {
       letter.classList.add("visible");
     } else {
@@ -594,12 +612,7 @@ window.addEventListener("scroll", () => {
     }
   });
 
-  const visiblePercentage = Math.max(
-    0,
-    Math.min(1, rect.bottom / viewportHeight)
-  );
-
-  if (visiblePercentage <= 0.25) {
+  if (isContentVisible) {
     letters.forEach((letter) => letter.classList.remove("visible"));
   }
 });
@@ -955,4 +968,3 @@ function activateEasterEgg() {
   // Snake bewegen
   let game = setInterval(draw, 100);
 }
-
