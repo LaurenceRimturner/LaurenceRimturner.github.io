@@ -1102,6 +1102,7 @@ F
   color: var(--main-white);
   word-spacing: 10px;
   font-weight: 500;
+  padding-right: 15px;
 }
 
 @keyframes marquee {
