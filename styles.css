@@ -1115,13 +1115,15 @@ F
 /* Fade Section */
 
 #fade-section {
-  height: 150vh;
+  height: 100vh;
   padding: 125px 0;
   overflow: hidden;
   transition: all 0.75s cubic-bezier(0.32, 0.76, 0.32, 0.76);
   display: flex;
   justify-content: center;
   align-items: center;
+  position: sticky;
+  top: 0;
 }
 
 .fade-container {
