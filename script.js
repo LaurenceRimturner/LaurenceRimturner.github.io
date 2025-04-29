@@ -890,7 +890,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function activateEasterEgg() {
-    // Canvas erzeugen
     const canvas = document.createElement("canvas");
     canvas.id = "snake-canvas";
     canvas.width = 300;
@@ -952,7 +951,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ) {
         clearInterval(game);
         alert("💥 Game Over! Score: " + score);
-        canvas.remove(); // Canvas entfernen
+        canvas.remove();
         return;
       }
 
