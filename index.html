@@ -3,503 +3,497 @@ Konami kennt das Geheimnis (❁´◡`❁)
 🔼🔼🔽🔽◀️▶️◀️▶️ 🅱 🅰
 -->
 
- <!DOCTYPE html>
- <html lang="de">
-   <head>
-     <meta charset="UTF-8" />
-     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link rel="stylesheet" type="text/css" href="styles.css" />
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <!-- <link rel="stylesheet" href="https://use.typekit.net/nqj0zum.css"> -->
-     <!-- <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet"> -->
-     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-     <link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-     <link rel="icon" type="image/png" href="./assets/svg/Logo-Favicon.svg">
-     <link rel="apple-touch-icon" href="./assets/svg/Logo-Apple-touch.svg">
-     <title>Laurin Felgendreher - Media Designer | Junior-Frontend-Developer </title>
-   </head>
-   <body>
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./assets/svg/Logo-Favicon.svg">
+    <link rel="apple-touch-icon" href="./assets/svg/Logo-Apple-touch.svg">
+    <title>Laurin Felgendreher - Media Designer | Junior-Frontend-Developer </title>
+  </head>
+  <body>
+    <div class="loadingScreen">
+       <div class="loadingScreenDiv">
+         <div class="innerLoadingScreenDiv">
+         <h2 class="countUp">0</h2>
+         <h2>[Click to Continue]</h2>
+       </div>
+       </div>
+      <div class="loadingScreenDiv loadingScreenContent">
+         <p>Bitte Warten</p>
+         <p><span id="toDoElements">...</span></p>
+     </div>
 
-    <canvas id="snake-canvas" width="300" height="300"
-        style="display: none; position: fixed; bottom: 50%; right: 50%; border: 2px solid lime; z-index: 9999; background: #000;  transform: translate(50%, 50%);">
-    </canvas>
-     <div class="loadingScreen">
-        <div class="loadingScreenDiv">
-          <div class="innerLoadingScreenDiv">
-          <h2 class="countUp">0</h2>
-          <h2>[Click to Continue]</h2>
-        </div>
-        </div>
-       <div class="loadingScreenDiv loadingScreenContent">
-          <p>Bitte Warten</p>
-          <p><span id="toDoElements">...</span></p>
-      </div>
+     </div>
+     <div id="MouseEventElement" class="cursor-wrapper">
+       <div class="LoadingscreenCursor"></div>
+     </div>
+    <header>
+      <div class="nav-section ">
+        <div class="container max-width">
+          <div class="row">
+            <nav class="col nav-bar fade fade-from-top">
+              <div class="nav-bar-content">
+              <div class="nav-logo-title">
+                <h5 onclick="nameChange()" class="nameTag"></h5>
+                <p class="hidden-on-Mobile">Junior Frontend Dev & Media Designer,<br>currently based in Berlin</p>
+              </div>            
+                <div class="nav-list">
+                  <div class="workingSchedule hidden-on-Mobile">
+                    <p class="workingHours"></p>
+                    <p class="workingHoursContent"></p>
+                  </div>
+                  <a id="darkMode" onclick="darkMode()">🙂</a>
+                  <a class="themeChangeBtn" onclick="themeChange()">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path d="m6.85 19l.85.85q.3.3.288.7t-.288.7q-.3.3-.712.313t-.713-.288L3.7 18.7q-.15-.15-.213-.325T3.426 18t.063-.375t.212-.325l2.575-2.575q.3-.3.713-.287t.712.312q.275.3.288.7t-.288.7l-.85.85H17v-3q0-.425.288-.712T18 13t.713.288T19 14v3q0 .825-.587 1.413T17 19zm10.3-12H7v3q0 .425-.288.713T6 11t-.712-.288T5 10V7q0-.825.588-1.412T7 5h10.15l-.85-.85q-.3-.3-.288-.7t.288-.7q.3-.3.712-.312t.713.287L20.3 5.3q.15.15.213.325t.062.375t-.062.375t-.213.325l-2.575 2.575q-.3.3-.712.288T16.3 9.25q-.275-.3-.288-.7t.288-.7z"/></svg>
+                  </a>
+                  </div>
+                </div>
+                <div class="workingSchedule hidden-on-Desktop meta-Nav">
+                  <p class="workingHours"></p>
+                  <p class="workingHoursContent"></p>
+                </div>
+              </nav>
 
+          </div>
+        </div>
       </div>
-      <div id="MouseEventElement" class="cursor-wrapper">
-        <div class="LoadingscreenCursor"></div>
-      </div>
-     <header>
-       <div class="nav-section ">
-         <div class="container max-width">
-           <div class="row">
-             <nav class="col nav-bar fade fade-from-top">
-               <div class="nav-bar-content">
-               <div class="nav-logo-title">
-                 <h5 onclick="nameChange()" class="nameTag"></h5>
-                 <p class="hidden-on-Mobile">Junior Frontend Dev & Media Designer,<br>currently based in Berlin</p>
-               </div>            
-                 <div class="nav-list">
-                   <div class="workingSchedule hidden-on-Mobile">
-                     <p class="workingHours"></p>
-                     <p class="workingHoursContent"></p>
-                   </div>
-                   <a id="darkMode" onclick="darkMode()">🙂</a>
-                   <a class="themeChangeBtn" onclick="themeChange()">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path d="m6.85 19l.85.85q.3.3.288.7t-.288.7q-.3.3-.712.313t-.713-.288L3.7 18.7q-.15-.15-.213-.325T3.426 18t.063-.375t.212-.325l2.575-2.575q.3-.3.713-.287t.712.312q.275.3.288.7t-.288.7l-.85.85H17v-3q0-.425.288-.712T18 13t.713.288T19 14v3q0 .825-.587 1.413T17 19zm10.3-12H7v3q0 .425-.288.713T6 11t-.712-.288T5 10V7q0-.825.588-1.412T7 5h10.15l-.85-.85q-.3-.3-.288-.7t.288-.7q.3-.3.712-.312t.713.287L20.3 5.3q.15.15.213.325t.062.375t-.062.375t-.213.325l-2.575 2.575q-.3.3-.712.288T16.3 9.25q-.275-.3-.288-.7t.288-.7z"/></svg>
-                   </a>
-                   </div>
-                 </div>
-                 <div class="workingSchedule hidden-on-Desktop meta-Nav">
-                   <p class="workingHours"></p>
-                   <p class="workingHoursContent"></p>
-                 </div>
-               </nav>
- 
-           </div>
-         </div>
-       </div>
-     </header>
-     <main>
-       <div class="section hero-section">
-         <div class="container HeroContainer">
-           <div class="heroImgBox hidden-on-Mobile fade fade-from-bottom">
-           </div>
-           <div class="row">
-            <div class="fade fade-from-bottom col col-xsm-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 hidden-on-Desktop">
-              <img loading="lazy" draggable="false" src="./assets/Images/ProfilePicture_Large_Test.jpg" alt=""></div>
-             <div class="col col-xsm-12 col-sm-12 col-md-12 col-lg-12 col-xl-12  header-content">
-               <h1 class="fade fade-from-bottom">Hi, ich bin <span class="headerBold" >Laurin</span><br>und brenn' für
-               </h1>
-               <div class="themeHeader">
-                 <div onclick="themeChange()" class="letterFX-tag">
-                   <span class="letter-fx fade rotate-from-bottom">K</span>
-                   <span class="letter-fx fade rotate-from-bottom">r</span>
-                   <span class="letter-fx fade rotate-from-bottom">e</span>
-                   <span class="letter-fx fade rotate-from-bottom">a</span>
-                   <span class="letter-fx fade rotate-from-bottom">t</span>
-                   <span class="letter-fx fade rotate-from-bottom">i</span>
-                   <span class="letter-fx fade rotate-from-bottom">v</span>
-                   <span class="letter-fx fade rotate-from-bottom">i</span>
-                   <span class="letter-fx fade rotate-from-bottom">t</span>
-                   <span class="letter-fx fade rotate-from-bottom">ä</span>
-                   <span class="letter-fx fade rotate-from-bottom">t</span>
-                   <span class="svg-box">
-                     <svg class=" fade fade-from-bottom" xmlns="http://www.w3.org/2000/svg"   stroke-width="5px" width="75" height="75" viewBox="0 0 64 64"><path stroke-width="5px" stroke="var(--main-white)" fill="var(--main-white)" d="M15 51.3c-.6 0-1.2-.2-1.6-.7c-.9-.9-.9-2.3 0-3.2l30.3-30.3H19.5c-1.2 0-2.2-1-2.2-2.2s1-2.2 2.2-2.2H49c1.2 0 2.2 1 2.2 2.2v29.7c0 1.2-1 2.2-2.2 2.2s-2.2-1-2.2-2.2V20.5L16.6 50.7c-.4.4-1 .6-1.6.6"/></svg>
-                   </span>
-                 </div>
-               </div>
-             </div>
-           </div>
-         </div>
-         <div class="marquee-container">
-           <div class="marquee fade fade-from-bottom">
-             <h3>
-              Neue Ideen. frische Perspektiven. Klare Lösungen. – Neue Ideen. frische Perspektiven. Klare Lösungen. – 
-              Neue Ideen. frische Perspektiven. Klare Lösungen. – Neue Ideen. frische Perspektiven. Klare Lösungen. – 
-             </h3>
-             <h3>
-              Neue Ideen. frische Perspektiven. Klare Lösungen. – Neue Ideen. frische Perspektiven. Klare Lösungen. – 
-              Neue Ideen. frische Perspektiven. Klare Lösungen. – Neue Ideen. frische Perspektiven. Klare Lösungen. – 
-             </h3>
-           </div>
-         </div>
-       </div>
-       <div id="fade-section" class="section">
-         <div class="container fade-container">
-           <div class="row">
-             <div class="col col-xsm-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-               <div class="fade-letter-tag">
-                 <div>
-                   <span >„</span>
-                   <span >F</span>
-                   <span >ü</span>
-                   <span >r</span>
-                 </div>
-                 <div>
-                   <span >m</span>
-                   <span >i</span>
-                   <span >c</span>
-                   <span >h</span>
-                 </div>
-                 <div>
-                   <span >i</span>
-                   <span >s</span>
-                   <span >t</span>
-                 </div>
-                 <div>
-                   <span >k</span>
-                   <span >o</span>
-                   <span >n</span>
-                   <span >t</span>
-                   <span >i</span>
-                   <span >n</span>
-                   <span >u</span>
-                   <span >i</span>
-                   <span >e</span>
-                   <span >r</span>
-                   <span >l</span>
-                   <span >i</span>
-                   <span >c</span>
-                   <span >h</span>
-                   <span >e</span>
-                   <span >s</span>
-                 </div>
-                 <div class="emphasizeLetters">
-                   <span >L</span>
-                   <span >e</span>
-                   <span >r</span>
-                   <span >n</span>
-                   <span >e</span>
-                   <span >n</span>
-                 </div>
-                 <div>
-                   <span >d</span>
-                   <span >e</span>
-                   <span >r</span>
-                 </div>
-                 <div>
-                   <span >S</span>
-                   <span >c</span>
-                   <span >h</span>
-                   <span >l</span>
-                   <span >ü</span>
-                   <span >s</span>
-                   <span >s</span>
-                   <span >e</span>
-                   <span >l</span>
-                 </div>
-                 <div>
-                   <span >z</span>
-                   <span >u</span>
-                   <span >m</span>
-                 </div>
-                 <div class="emphasizeLetters">
-                   <span >E</span>
-                   <span >r</span>
-                   <span >f</span>
-                   <span >o</span>
-                   <span >l</span>
-                   <span >g</span>
-                   <span >.</span>
-                 </div>
-                 <div>
-                   <span>D</span>
-                   <span>a</span>
-                   <span>h</span>
-                   <span>e</span>
-                   <span>r</span>
-               </div>
-                 <div>
-                   <span >s</span>
-                   <span >u</span>
-                   <span >c</span>
-                   <span >h</span>
-                   <span >e</span>
-                 </div>
-                 <div>
-                   <span >i</span>
-                   <span >c</span>
-                   <span >h</span>
-                 </div>
-                 <div>
-                   <span >s</span>
-                   <span >t</span>
-                   <span >e</span>
-                   <span >t</span>
-                   <span >s</span>
-                 </div>
-                 <div>
-                   <span >n</span>
-                   <span >a</span>
-                   <span >c</span>
-                   <span >h</span>
-                 </div>
-                 <div>
-                   <span >n</span>
-                   <span >e</span>
-                   <span >u</span>
-                   <span >e</span>
-                   <span >n</span>
-                 </div>
-                 <div class="emphasizeLetters">
-                   <span >H</span>
-                   <span >e</span>
-                   <span >r</span>
-                   <span >a</span>
-                   <span >u</span>
-                   <span >s</span>
-                   <span >f</span>
-                   <span >o</span>
-                   <span >r</span>
-                   <span >d</span>
-                   <span >e</span>
-                   <span >r</span>
-                   <span >u</span>
-                   <span >n</span>
-                   <span >g</span>
-                   <span >e</span>
-                   <span >n</span>
-                 </div>
-                 <div>
-                   <span >d</span>
-                   <span >i</span>
-                   <span >e</span>
-                 </div>
-                 <div>
-                   <span >m</span>
-                   <span >i</span>
-                   <span >c</span>
-                   <span >h</span>
-                 </div>
-                 <div>
-                   <span >i</span>
-                   <span >n</span>
-                   <span >s</span>
-                   <span >p</span>
-                   <span >i</span>
-                   <span >r</span>
-                   <span >i</span>
-                   <span >e</span>
-                   <span >r</span>
-                   <span >e</span>
-                   <span >n</span>
-                 </div>
-                 <div>
-                   <span >u</span>
-                   <span >n</span>
-                   <span >d</span>
-                 </div>
-                 <div>
-                   <span >m</span>
-                   <span >o</span>
-                   <span >t</span>
-                   <span >i</span>
-                   <span >v</span>
-                   <span >i</span>
-                   <span >e</span>
-                   <span >r</span>
-                   <span >e</span>
-                   <span >n</span>
-                   <span >.</span>
-                   <span >“</span>
-                 </div>
-               </div>
-             </div>
-           </div>
-         </div>
-       </div>
-       <div class="section content-section">
-         <div class="container fade fade-from-bottom">
-           <div class="row">
-             <div style="padding-bottom: 0;" class="col col-xsm-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-               <h3>Über mich</h3>
-             </div>
-             <div class="col col-xsm-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
-               <h4 >Junior Frontend Dev<br> & Media Designer,<br> based in Berlin</h4>
-             </div>
-             <div class="col col-xsm-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-               <h5> Ich vereine meine Leidenschaft für Technologie, Design und User Experience.</h5>
-               <p>Digitale Erlebnisse schaffen, die nicht nur optisch begeistern, sondern auch funktional überzeugen. Durch kreatives Interaction Design gestalte ich Webseiten, die mehr als nur Informationen vermitteln – sie erzählen eine Geschichte und nehmen den Nutzer mit auf eine interaktive Entdeckungsreise. Perfekte Usability, ansprechende Ästhetik und technologische Innovation stehen dabei im Mittelpunkt.</p>
-             </div>        
-           </div>
-         </div>
-         <div class="container grid-container fade fade-from-bottom">
-           <a target="_blank" href="https://www.youtube.com/watch?v=L4qM1IEhtNQ" class="item1">
-            <p class="categoryTag">Vorstellungsvideo</p>
-             <div>
-               <h3 class="video-quote">„Minimalismus bedeutet fokussiertes Design.“</h3>
-             </div>
-             <svg xmlns="http://www.w3.org/2000/svg"   stroke-width="5px" width="175" height="75" viewBox="0 0 64 64"><path stroke-width="5px" stroke="#fdfdfd" fill="#fdfdfd" d="M15 51.3c-.6 0-1.2-.2-1.6-.7c-.9-.9-.9-2.3 0-3.2l30.3-30.3H19.5c-1.2 0-2.2-1-2.2-2.2s1-2.2 2.2-2.2H49c1.2 0 2.2 1 2.2 2.2v29.7c0 1.2-1 2.2-2.2 2.2s-2.2-1-2.2-2.2V20.5L16.6 50.7c-.4.4-1 .6-1.6.6"/></svg>
-           </a>
-           <a class="item2">
-            <p class="categoryTag">Weiterbildung</p>
-             <h3>FreeCodeCamp <br> Zertifikat</h3>
-             <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24"><path fill="var(--main-white)" d="M19.885 3.906a.62.62 0 0 0-.354.12c-.08.08-.161.196-.161.313c0 .2.236.474.673.923c1.822 1.754 2.738 3.903 2.732 6.494c-.007 2.867-.97 5.17-2.844 6.954c-.394.353-.556.63-.557.867c0 .116.08.237.16.353a.58.58 0 0 0 .353.162c.434 0 1.04-.512 1.833-1.509c1.542-1.89 2.24-3.978 2.279-6.824c.036-2.847-.857-4.777-2.603-6.77c-.63-.712-1.153-1.082-1.511-1.083m-15.769.002c-.358 0-.882.37-1.51 1.083C.858 6.984-.035 8.914.001 11.761c.04 2.846.737 4.933 2.28 6.824c.791.997 1.398 1.51 1.832 1.509a.57.57 0 0 0 .352-.162c.08-.116.16-.237.16-.353c0-.237-.162-.514-.556-.866c-1.873-1.785-2.837-4.087-2.844-6.955c-.006-2.591.91-4.74 2.732-6.494c.437-.449.674-.722.673-.923c0-.117-.08-.233-.161-.313a.62.62 0 0 0-.354-.12zm7.056.895s.655 2.081-2.649 6.727c-3.156 4.433 1.045 7.15 1.432 7.386c-.281-.18-2.001-1.5.402-5.423c.466-.77 1.076-1.47 1.834-3.041c0 0 .67.946.32 2.998c-.523 3.101 2.271 2.214 2.314 2.257c.976 1.15-.808 3.17-.917 3.233c-.108.061 5.096-3.13 1.399-7.935c-.253.253-.582 1.442-1.267 1.266c-.684-.174 2.125-3.494-2.868-7.468M9.955 18.916q.036.024.038.024z"/></svg>
-           </a>
-           <div class="item3">
-            <?xml version="1.0" encoding="UTF-8"?><svg id="Ebene_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 225"><defs><style>.cls-1{fill:none;}.cls-1,.cls-2{stroke-width:0px;}.cls-2{fill:var(--theme-color);}</style></defs><g id="Ebene_1-2"><polygon class="cls-1" points="155.75 225 375 5.74 375 0 332.24 0 107.24 225 155.75 225"/><polygon class="cls-1" points="162.76 0 0 162.76 0 211.27 211.27 0 162.76 0"/><polygon class="cls-1" points="219.25 0 0 219.26 0 225 42.76 225 267.76 0 219.25 0"/><polygon class="cls-1" points="375 225 375 183.21 333.21 225 375 225"/><polygon class="cls-1" points="106.27 0 0 106.27 0 154.78 154.78 0 106.27 0"/><polygon class="cls-1" points="212.24 225 375 62.24 375 13.73 163.73 225 212.24 225"/><polygon class="cls-1" points="99.26 225 324.25 0 275.74 0 50.75 225 99.26 225"/><polygon class="cls-1" points="325.22 225 375 175.22 375 126.71 276.72 225 325.22 225"/><polygon class="cls-1" points="0 0 0 41.79 41.79 0 0 0"/><polygon class="cls-1" points="268.73 225 375 118.73 375 70.22 220.22 225 268.73 225"/><polygon class="cls-1" points="49.78 0 0 49.78 0 98.29 98.28 0 49.78 0"/><polygon class="cls-2" points="275.74 0 267.76 0 42.76 225 50.75 225 275.74 0"/><polygon class="cls-2" points="98.28 0 0 98.29 0 106.27 106.27 0 98.28 0"/><polygon class="cls-2" points="154.78 0 0 154.78 0 162.76 162.76 0 154.78 0"/><polygon class="cls-2" points="211.27 0 0 211.27 0 219.26 219.25 0 211.27 0"/><polygon class="cls-2" points="41.79 0 0 41.79 0 49.78 49.78 0 41.79 0"/><polygon class="cls-2" points="220.22 225 375 70.22 375 62.24 212.24 225 220.22 225"/><polygon class="cls-2" points="163.73 225 375 13.73 375 5.74 155.75 225 163.73 225"/><polygon class="cls-2" points="276.72 225 375 126.71 375 118.73 268.73 225 276.72 225"/><polygon class="cls-2" points="333.21 225 375 183.21 375 175.22 325.22 225 333.21 225"/><polygon class="cls-2" points="107.24 225 332.24 0 324.25 0 99.26 225 107.24 225"/></g></svg>
-           </div>
-           <!-- <div class="item4">             
-            <h3>Hier Platz frei</h3></div>
-           <div class="item5">
-             <h3>Hier Platz frei</h3>
-             </div> -->
-           <div class="item6">
-             <div class="innerSlider">
-               <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 512 512"><path fill="var(--main-font-color)" d="M322.481 29.346L512 482.654V29.346zM0 29.346v453.308L189.519 29.346zm256.32 166.896l120.797 286.412h-79.18L261.87 391.31H173.3z"/></svg>
-               <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 512 512"><path fill="var(--main-font-color)" fill-rule="evenodd" d="M512 512H0V0h512zM406.41 217.014v-39.71c-6.54-2.912-43.991-13.625-73.578-2.335c-42.62 16.262-41.089 65.252-24.916 84.479c20.955 24.912 73.082 34.2 64.552 58.652c-4.417 12.662-25.038 14.866-43.218 10.615c-16.93-3.958-31.65-13.986-31.65-13.986v42.045s14.55 8.112 32.408 10.042c22.893 2.473 51.589-2.197 65.965-14.975c25.59-22.747 29.52-73.137-18.975-96.536c-40.355-19.47-39.691-25.027-39.408-35.014c.38-13.376 28.464-21.61 68.82-3.277M188.79 105.575c33.577 1.168 82.922 16.643 82.922 82.63s-60.374 87.64-115.463 82.922v93.433H115.21V106.45s40.001-2.043 73.579-.875m10.657 124.675c17.696-6.457 29.198-20.338 29.198-41.9c0-22.861-11.705-38.342-29.607-42.715c-19.386-4.737-42.789-1.945-42.789-1.945v90.044s32.395.458 43.198-3.484" clip-rule="evenodd"/></svg>
-               <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 512 512"><path fill="var(--main-font-color)" d="M265.301 269.334c-1.24-39.937 26.821-71.547 67.562-60.916v122.94c-40.599 9.808-69.274-14.325-67.562-62.024M0 0v512h512V0zm177.804 369.014H134.61v-266.92h43.194zm135.122 3.322c-49.296 1.424-92.89-29.841-91.927-100.787c.774-57.015 36.303-108.212 111.864-103.002v-66.453h44.302v239.785c0 4.067.37 9.887 1.363 14.713c-17.01 9.418-39.047 15.574-65.602 15.744"/></svg>
-               <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 512 512"><path fill="var(--main-font-color)" fill-rule="evenodd" d="M172.049 108.008h53.334l76.693 256.941H255.75l-19.076-73.189h-74.746l-19.466 73.19h-40.877l70.465-244.873zm54.113 145.99L199.689 145.38l-27.251 108.616zm155.333-80H339.45V364.95h42.045zM359.93 99.811c-13.621 0-24.663 10.915-24.663 24.38s11.042 24.381 24.663 24.381s24.664-10.915 24.664-24.38s-11.042-24.381-24.664-24.381M512 512H0V0h512z" clip-rule="evenodd"/></svg>
-               <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 512 512"><path fill="var(--main-font-color)" d="M0 0v512h512V0zm264.095 237.798c-18.461 26.616-55.42 40.048-106.423 37.639v97.132H114.13V103.5l65.872-1.116c54.756-2.06 96.733 26.942 97.133 84.852c-.472 20.392-3.909 37.4-13.04 50.563m142.551-29.35c-.053 1.732-.938 2.274-2.233 2.233c-16.247-1.473-32.992 1-46.891 4.466V372.57h-43.544V214.03c.175-9.395-.341-16.216-1.116-23.446c-.164-.827-.19-2.562 2.233-3.35c21.767-7.895 54.646-17.423 89.318-16.746c1.37-.007 2.222.61 2.233 2.233zm-174.17-20.097c.051 13.428-2.17 23.026-7.294 29.907c-13.199 17.723-39.21 17.42-47.412 18.102h-20.098v-94.9h23.446c38.09.267 50.778 19.538 51.358 46.891"/></svg>
-               <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 512 512"><path fill="var(--main-font-color)" d="M389.186 214.341c4.678 8.911 6.247 18.416 6.107 28.248h-67.587c4.105-26.449 14.979-42.58 36.555-42.095c12.549 0 20.857 4.622 24.925 13.847m-248.688 36.002H198.1l-29.909-112.99c-3.756 25.557-16.927 69.1-27.693 112.99M512 0v512H0V0zM274.413 365.548L195.228 98.582h-54.73c0 5.92-.38 12.376-1.108 14.955c-.744 2.596-1.108 4.985-1.108 7.2L68.336 365.548h41.384l19.7-75.326h77.543l21.684 75.326zm161.852-120.744c0-17.724-5.176-35.447-15.508-53.171c-10.35-17.724-28.802-26.586-55.388-26.586c-25.858 0-45.971 10.16-60.371 30.463C277.833 231.333 275 299 303.89 338.408c13.656 20.32 36.365 30.464 68.126 30.464c17.393-.044 33.978-2.142 48.74-8.863c1.723-1.774 2.168-2.616 2.216-5.539v-29.909c-.05-2.074-1.187-2.16-3.323-2.214c-21.615 10.563-53.033 10.187-68.928 1.022c-14.79-8.527-23.485-26.35-23.015-47.547h63.141c11.078 0 19.94-.174 26.586-.554c6.647-.364 11.44-.918 14.4-1.662c.728 0 1.282-.174 1.662-.554l1.662-1.662c0-2.215.173-5.712.554-10.524c.363-4.794.554-10.142.554-16.062"/></svg>
-               <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 512 512"><path fill="var(--main-font-color)" d="M167.796 154.298c5.586 26.531 20.946 81.222 27.23 106.357h-53.528c9.31-35.142 21.644-79.826 26.298-106.357M512 0v512H0V0zM266.673 367.709l-73.968-249.018h-51.207c-.067 8.093-.624 15.525-2.327 21.41L73.769 367.71h39.157l18.798-69.818h72.843l19.394 69.818zm162.77-11.462c-.744-13.631-1.69-22.136-1.69-25.076V183.855h-39.331v147.781c-30.854 10.624-57.096 2.241-55.855-29.789V183.855H290.91v122.88c-1.028 74.08 68.934 77.908 138.535 49.512"/></svg>
-               <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 512 512"><path fill="var(--main-font-color)" d="M0 0v512h512V0zm217.538 367.527L170.2 269.97l-45.673 97.324H80.013l65.508-124.798L82.184 116.3h46.202l44.842 95.927l44.466-96.16h43.37l-63.389 122.47l67.132 128.99zm202.959-10.245c-19.558 9.314-40.048 13.505-59.606 13.505c-50.524.233-86.613-30.967-86.613-94.298c1.644-64.876 44.872-101.077 105.473-96.16V116.3h41.444v215.604c.086 25.713 2.924 23.24-.698 25.378M379.75 216.884v115.252c-40.907 10.615-63.525-14.28-63.33-57.51c.154-44.334 29.282-67.343 63.33-57.742"/></svg>
-               <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24"><path fill="var(--main-font-color)" d="M15.332 8.668a3.333 3.333 0 0 0 0-6.663H8.668a3.333 3.333 0 0 0 0 6.663a3.333 3.333 0 0 0 0 6.665a3.333 3.333 0 0 0 0 6.664A3.334 3.334 0 0 0 12 18.664V8.668z"/><circle cx="15.332" cy="12" r="3.332" fill="var(--main-font-color)"/></svg>
-               <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24"><path fill="var(--main-font-color)" d="m21.29 4.1l-4.12-2a1.4 1.4 0 0 0-.48-.1h-.08a1.18 1.18 0 0 0-.72.24l-.14.12l-7.88 7.19L4.44 7a.83.83 0 0 0-.54-.17a.88.88 0 0 0-.53.17l-1.1 1a.8.8 0 0 0-.27.61a.84.84 0 0 0 .27.62l3 2.71l-3 2.72a.84.84 0 0 0 0 1.23l1.1 1a.9.9 0 0 0 .6.22a.93.93 0 0 0 .47-.17l3.43-2.61l7.88 7.19a1.2 1.2 0 0 0 .76.36h.17a1 1 0 0 0 .49-.12l4.12-2a1.25 1.25 0 0 0 .71-1.1V5.23a1.26 1.26 0 0 0-.71-1.13M17 16.47l-6-4.53l6-4.53z"/></svg>
-               <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 128 128"><path fill="var(--main-font-color)" d="M27.235 13.885c-7.177 0-12.486 6.284-12.249 13.099c.228 6.546-.068 15.026-2.203 21.94c-2.14 6.936-5.76 11.319-11.673 11.883v6.387c5.913.563 9.533 4.947 11.673 11.883c2.135 6.914 2.43 15.394 2.203 21.94c-.238 6.815 5.072 13.098 12.249 13.098h73.54c7.177 0 12.486-6.284 12.249-13.098c-.228-6.546.068-15.026 2.202-21.94c2.14-6.935 5.751-11.319 11.664-11.883v-6.387c-5.913-.563-9.523-4.947-11.664-11.883c-2.134-6.914-2.43-15.394-2.202-21.94c.237-6.815-5.072-13.099-12.25-13.099zm58.114 61.686c0 9.384-7.002 15.073-18.621 15.073H45.306a.49.49 0 0 1-.491-.491V37.827a.49.49 0 0 1 .491-.492h21.309c9.689 0 16.047 5.246 16.047 13.3c0 5.653-4.277 10.713-9.727 11.6v.296c7.418.813 12.414 5.948 12.414 13.04M64.571 44.096H53.293v15.922h9.5c7.342 0 11.391-2.955 11.391-8.238c0-4.95-3.481-7.684-9.613-7.684m-11.278 22.24v17.548h11.695c7.645 0 11.695-3.066 11.695-8.83c0-5.763-4.163-8.718-12.187-8.718z"/></svg>
-               <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24"><path fill="var(--main-font-color)" d="M4.136 3.012h15.729l-1.431 16.15l-6.451 1.826l-6.414-1.826zm5.266 7.302l-.173-2.035l7.533.002l.173-1.963l-9.87-.002l.522 5.998h6.835l-.243 2.566l-2.179.602l-2.214-.605l-.141-1.58H7.691l.247 3.123L12 17.506l4.028-1.08l.558-6.111H9.402z"/></svg>
-               <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24"><path fill="var(--main-font-color)" d="M4.192 3.143h15.615l-1.42 16.034l-6.404 1.812l-6.369-1.813zM16.9 6.424l-9.8-.002l.158 1.949l7.529.002l-.189 2.02H9.66l.179 1.913h4.597l-.272 2.62l-2.164.598l-2.197-.603l-.141-1.569h-1.94l.216 2.867L12 17.484l3.995-1.137z"/></svg>
-               <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24"><path fill="var(--main-font-color)" d="M3 3h18v18H3zm16.525 13.707c-.131-.821-.666-1.511-2.252-2.155c-.552-.259-1.165-.438-1.349-.854c-.068-.248-.078-.382-.034-.529c.113-.484.687-.629 1.137-.495c.293.09.563.315.732.676c.775-.507.775-.507 1.316-.844c-.203-.314-.304-.451-.439-.586c-.473-.528-1.103-.798-2.126-.775l-.528.067c-.507.124-.991.395-1.283.754c-.855.968-.608 2.655.427 3.354c1.023.765 2.521.933 2.712 1.653c.18.878-.652 1.159-1.475 1.058c-.607-.136-.945-.439-1.316-1.002l-1.372.788c.157.359.337.517.607.832c1.305 1.316 4.568 1.249 5.153-.754c.021-.067.18-.528.056-1.237zm-6.737-5.434h-1.686c0 1.453-.007 2.898-.007 4.354c0 .924.047 1.772-.104 2.033c-.247.517-.886.451-1.175.359c-.297-.146-.448-.349-.623-.641c-.047-.078-.082-.146-.095-.146l-1.368.844c.229.473.563.879.994 1.137c.641.383 1.502.507 2.404.305c.588-.17 1.095-.519 1.358-1.059c.384-.697.302-1.553.299-2.509c.008-1.541 0-3.083 0-4.635z"/></svg>
-               <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 128 128"><path fill="var(--main-font-color)" fill-rule="evenodd" d="M64.094 126.224c34.275-.052 62.021-27.933 62.021-62.325c0-33.833-27.618-61.697-60.613-62.286C30.85.995 1.894 29.113 1.885 63.21c-.01 35.079 27.612 63.064 62.209 63.014M63.993 4.63c32.907-.011 59.126 26.725 59.116 60.28c-.011 31.679-26.925 58.18-59.092 58.187c-32.771.007-59.125-26.563-59.124-59.608c.002-32.193 26.766-58.848 59.1-58.859M39.157 35.896c.538 1.793-.968 2.417-2.569 2.542c-1.685.13-3.369.257-5.325.406c6.456 19.234 12.815 38.183 19.325 57.573c.464-.759.655-.973.739-1.223c3.574-10.682 7.168-21.357 10.651-32.069c.318-.977.16-2.271-.188-3.275c-1.843-5.32-4.051-10.524-5.667-15.908c-1.105-3.686-2.571-6.071-6.928-5.644c-.742.073-1.648-1.524-2.479-2.349c1.005-.6 2.003-1.704 3.017-1.719a850 850 0 0 1 26.618.008c1.018.017 2.016 1.15 3.021 1.765c-.88.804-1.639 2.01-2.668 2.321c-1.651.498-3.482.404-5.458.58l19.349 57.56c2.931-9.736 5.658-18.676 8.31-27.639c2.366-8.001.956-15.473-3.322-22.52c-1.286-2.119-2.866-4.175-3.595-6.486c-.828-2.629-1.516-5.622-1.077-8.259c.745-4.469 4.174-6.688 8.814-7.113C74.333.881 34.431 9.317 19.728 34.922c5.66-.261 11.064-.604 16.472-.678c1.022-.013 2.717.851 2.957 1.652m10.117 77.971c-.118.345-.125.729-.218 1.302c10.943 3.034 21.675 2.815 32.659-.886l-16.78-45.96c-5.37 15.611-10.52 30.575-15.661 45.544m-8.456-2.078l-25.281-69.35c-11.405 22.278-2.729 56.268 25.281 69.35m76.428-44.562c.802-10.534-2.832-25.119-5.97-27.125c-.35 3.875-.106 8.186-1.218 12.114c-2.617 9.255-5.817 18.349-8.899 27.468c-3.35 9.912-6.832 19.779-10.257 29.666c16.092-9.539 24.935-23.618 26.344-42.123" clip-rule="evenodd"/></svg>
-               <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 640 512"><path fill="var(--main-font-color)" d="M640 64L435.8 463.2H244l85.5-165.5h-3.8C255.1 389.3 149.9 449.5 0 463.2V300.1s95.9-5.7 152.3-64.9H0V64h171.1v140.8h3.8l70-140.8h129.4v139.9h3.8L450.7 64z"/></svg>
-           </div>
-           </div>
-           <div class="item7">
-            <p class="categoryTag">Ausbildung</p>
-            <div class="Note">
-              <h3 >1,2</h3>
-              <p>Abschlussn&shy;ote</p>
+    </header>
+    <main>
+      <div class="section hero-section">
+        <div class="container HeroContainer">
+          <div class="heroImgBox hidden-on-Mobile fade fade-from-bottom">
+          </div>
+          <div class="row">
+           <div class="fade fade-from-bottom col col-xsm-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 hidden-on-Desktop">
+             <img loading="lazy" draggable="false" src="./assets/Images/ProfilePicture_Large_Test.jpg" alt=""></div>
+            <div class="col col-xsm-12 col-sm-12 col-md-12 col-lg-12 col-xl-12  header-content">
+              <h1 class="fade fade-from-bottom">Hi, ich bin <span class="headerBold" >Laurin</span><br>und brenn' für
+              </h1>
+              <div class="themeHeader">
+                <div onclick="themeChange()" class="letterFX-tag">
+                  <span class="letter-fx fade rotate-from-bottom">K</span>
+                  <span class="letter-fx fade rotate-from-bottom">r</span>
+                  <span class="letter-fx fade rotate-from-bottom">e</span>
+                  <span class="letter-fx fade rotate-from-bottom">a</span>
+                  <span class="letter-fx fade rotate-from-bottom">t</span>
+                  <span class="letter-fx fade rotate-from-bottom">i</span>
+                  <span class="letter-fx fade rotate-from-bottom">v</span>
+                  <span class="letter-fx fade rotate-from-bottom">i</span>
+                  <span class="letter-fx fade rotate-from-bottom">t</span>
+                  <span class="letter-fx fade rotate-from-bottom">ä</span>
+                  <span class="letter-fx fade rotate-from-bottom">t</span>
+                  <span class="svg-box">
+                    <svg class=" fade fade-from-bottom" xmlns="http://www.w3.org/2000/svg"   stroke-width="5px" width="75" height="75" viewBox="0 0 64 64"><path stroke-width="5px" stroke="var(--main-white)" fill="var(--main-white)" d="M15 51.3c-.6 0-1.2-.2-1.6-.7c-.9-.9-.9-2.3 0-3.2l30.3-30.3H19.5c-1.2 0-2.2-1-2.2-2.2s1-2.2 2.2-2.2H49c1.2 0 2.2 1 2.2 2.2v29.7c0 1.2-1 2.2-2.2 2.2s-2.2-1-2.2-2.2V20.5L16.6 50.7c-.4.4-1 .6-1.6.6"/></svg>
+                  </span>
+                </div>
+              </div>
             </div>
-           </div>
-           <div class="item8">
-           <ul class="pills-box">
-             <li class="pills-content">Strategisch</li>
-             <li class="pills-content">Qualitätsbewusst</li>
-             <li class="pills-content">Kommunikativ</li>
-             <li class="pills-content">Kreativ</li>
-             <li class="pills-content">Analytisch</li>
-             <li class="pills-content">Flexibel</li>
-             <li class="pills-content">Teamfähig</li>
-            </ul>
-           </div>
-           <div class="item9">
-            <p class="categoryTag">Spotify Playlist</p>
+          </div>
+        </div>
+        <div class="marquee-container">
+          <div class="marquee fade fade-from-bottom">
+            <h3>
+             Neue Ideen. frische Perspektiven. Klare Lösungen. – Neue Ideen. frische Perspektiven. Klare Lösungen. – 
+             Neue Ideen. frische Perspektiven. Klare Lösungen. – Neue Ideen. frische Perspektiven. Klare Lösungen. – 
+            </h3>
+            <h3>
+             Neue Ideen. frische Perspektiven. Klare Lösungen. – Neue Ideen. frische Perspektiven. Klare Lösungen. – 
+             Neue Ideen. frische Perspektiven. Klare Lösungen. – Neue Ideen. frische Perspektiven. Klare Lösungen. – 
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div id="fade-section" class="section">
+        <div class="container fade-container">
+          <div class="row">
+            <div class="col col-xsm-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <div class="fade-letter-tag">
+                <div>
+                  <span >„</span>
+                  <span >F</span>
+                  <span >ü</span>
+                  <span >r</span>
+                </div>
+                <div>
+                  <span >m</span>
+                  <span >i</span>
+                  <span >c</span>
+                  <span >h</span>
+                </div>
+                <div>
+                  <span >i</span>
+                  <span >s</span>
+                  <span >t</span>
+                </div>
+                <div>
+                  <span >k</span>
+                  <span >o</span>
+                  <span >n</span>
+                  <span >t</span>
+                  <span >i</span>
+                  <span >n</span>
+                  <span >u</span>
+                  <span >i</span>
+                  <span >e</span>
+                  <span >r</span>
+                  <span >l</span>
+                  <span >i</span>
+                  <span >c</span>
+                  <span >h</span>
+                  <span >e</span>
+                  <span >s</span>
+                </div>
+                <div class="emphasizeLetters">
+                  <span >L</span>
+                  <span >e</span>
+                  <span >r</span>
+                  <span >n</span>
+                  <span >e</span>
+                  <span >n</span>
+                </div>
+                <div>
+                  <span >d</span>
+                  <span >e</span>
+                  <span >r</span>
+                </div>
+                <div>
+                  <span >S</span>
+                  <span >c</span>
+                  <span >h</span>
+                  <span >l</span>
+                  <span >ü</span>
+                  <span >s</span>
+                  <span >s</span>
+                  <span >e</span>
+                  <span >l</span>
+                </div>
+                <div>
+                  <span >z</span>
+                  <span >u</span>
+                  <span >m</span>
+                </div>
+                <div class="emphasizeLetters">
+                  <span >E</span>
+                  <span >r</span>
+                  <span >f</span>
+                  <span >o</span>
+                  <span >l</span>
+                  <span >g</span>
+                  <span >.</span>
+                </div>
+                <div>
+                  <span>D</span>
+                  <span>a</span>
+                  <span>h</span>
+                  <span>e</span>
+                  <span>r</span>
+              </div>
+                <div>
+                  <span >s</span>
+                  <span >u</span>
+                  <span >c</span>
+                  <span >h</span>
+                  <span >e</span>
+                </div>
+                <div>
+                  <span >i</span>
+                  <span >c</span>
+                  <span >h</span>
+                </div>
+                <div>
+                  <span >s</span>
+                  <span >t</span>
+                  <span >e</span>
+                  <span >t</span>
+                  <span >s</span>
+                </div>
+                <div>
+                  <span >n</span>
+                  <span >a</span>
+                  <span >c</span>
+                  <span >h</span>
+                </div>
+                <div>
+                  <span >n</span>
+                  <span >e</span>
+                  <span >u</span>
+                  <span >e</span>
+                  <span >n</span>
+                </div>
+                <div class="emphasizeLetters">
+                  <span >H</span>
+                  <span >e</span>
+                  <span >r</span>
+                  <span >a</span>
+                  <span >u</span>
+                  <span >s</span>
+                  <span >f</span>
+                  <span >o</span>
+                  <span >r</span>
+                  <span >d</span>
+                  <span >e</span>
+                  <span >r</span>
+                  <span >u</span>
+                  <span >n</span>
+                  <span >g</span>
+                  <span >e</span>
+                  <span >n</span>
+                </div>
+                <div>
+                  <span >d</span>
+                  <span >i</span>
+                  <span >e</span>
+                </div>
+                <div>
+                  <span >m</span>
+                  <span >i</span>
+                  <span >c</span>
+                  <span >h</span>
+                </div>
+                <div>
+                  <span >i</span>
+                  <span >n</span>
+                  <span >s</span>
+                  <span >p</span>
+                  <span >i</span>
+                  <span >r</span>
+                  <span >i</span>
+                  <span >e</span>
+                  <span >r</span>
+                  <span >e</span>
+                  <span >n</span>
+                </div>
+                <div>
+                  <span >u</span>
+                  <span >n</span>
+                  <span >d</span>
+                </div>
+                <div>
+                  <span >m</span>
+                  <span >o</span>
+                  <span >t</span>
+                  <span >i</span>
+                  <span >v</span>
+                  <span >i</span>
+                  <span >e</span>
+                  <span >r</span>
+                  <span >e</span>
+                  <span >n</span>
+                  <span >.</span>
+                  <span >“</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section content-section">
+        <div class="container fade fade-from-bottom">
+          <div class="row">
+            <div style="padding-bottom: 0;" class="col col-xsm-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <h3>Über mich</h3>
+            </div>
+            <div class="col col-xsm-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
+              <h4 >Junior Frontend Dev<br> & Media Designer,<br> based in Berlin</h4>
+            </div>
+            <div class="col col-xsm-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+              <h5> Ich vereine meine Leidenschaft für Technologie, Design und User Experience.</h5>
+              <p>Digitale Erlebnisse schaffen, die nicht nur optisch begeistern, sondern auch funktional überzeugen. Durch kreatives Interaction Design gestalte ich Webseiten, die mehr als nur Informationen vermitteln – sie erzählen eine Geschichte und nehmen den Nutzer mit auf eine interaktive Entdeckungsreise. Perfekte Usability, ansprechende Ästhetik und technologische Innovation stehen dabei im Mittelpunkt.</p>
+            </div>        
+          </div>
+        </div>
+        <div class="container grid-container fade fade-from-bottom">
+          <a target="_blank" href="https://www.youtube.com/watch?v=L4qM1IEhtNQ" class="item1">
+           <p class="categoryTag">Vorstellungsvideo</p>
             <div>
-              <div>              
-                <h3>Flow State</h3>
-                <p><b>Struktur. Rhythmus. Fokus.</b> Musik die den Flow am Laufen hält.</p>
-              </div>
-              <a href="https://open.spotify.com/playlist/3Vx1IYaiBeNLhPR4tiHxGg?si=9a0ee50c39d8445a&pt=8deb67f0fc67581358d401cdc671d96b" target="_blank" rel="noopener noreferrer nofollow"
-              ><svg width="100%" height="100" viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <rect x="0" y="0" width="400" height="100" fill="var(--theme-color)"/>
-                <rect x="100.00" y="44.50" width="6.71" height="11.00" rx="3.36" ry="3.36" fill="#ffffff"/>
-                <rect x="112.42" y="23.50" width="6.71" height="53.00" rx="3.36" ry="3.36" fill="#ffffff"/>
-                <rect x="124.84" y="37.50" width="6.71" height="25.00" rx="3.36" ry="3.36" fill="#ffffff"/>
-                <rect x="137.27" y="23.50" width="6.71" height="53.00" rx="3.36" ry="3.36" fill="#ffffff"/>
-                <rect x="149.69" y="23.50" width="6.71" height="53.00" rx="3.36" ry="3.36" fill="#ffffff"/>
-                <rect x="162.11" y="44.50" width="6.71" height="11.00" rx="3.36" ry="3.36" fill="#ffffff"/>
-                <rect x="174.53" y="20.00" width="6.71" height="60.00" rx="3.36" ry="3.36" fill="#ffffff"/>
-                <rect x="186.96" y="41.00" width="6.71" height="18.00" rx="3.36" ry="3.36" fill="#ffffff"/>
-                <rect x="199.38" y="27.00" width="6.71" height="46.00" rx="3.36" ry="3.36" fill="#ffffff"/>
-                <rect x="211.80" y="23.50" width="6.71" height="53.00" rx="3.36" ry="3.36" fill="#ffffff"/>
-                <rect x="224.22" y="37.50" width="6.71" height="25.00" rx="3.36" ry="3.36" fill="#ffffff"/>
-                <rect x="236.64" y="20.00" width="6.71" height="60.00" rx="3.36" ry="3.36" fill="#ffffff"/>
-                <rect x="249.07" y="20.00" width="6.71" height="60.00" rx="3.36" ry="3.36" fill="#ffffff"/>
-                <rect x="261.49" y="37.50" width="6.71" height="25.00" rx="3.36" ry="3.36" fill="#ffffff"/>
-                <rect x="273.91" y="44.50" width="6.71" height="11.00" rx="3.36" ry="3.36" fill="#ffffff"/>
-                <rect x="286.33" y="30.50" width="6.71" height="39.00" rx="3.36" ry="3.36" fill="#ffffff"/>
-                <rect x="298.76" y="20.00" width="6.71" height="60.00" rx="3.36" ry="3.36" fill="#ffffff"/>
-                <rect x="311.18" y="34.00" width="6.71" height="32.00" rx="3.36" ry="3.36" fill="#ffffff"/>
-                <rect x="323.60" y="30.50" width="6.71" height="39.00" rx="3.36" ry="3.36" fill="#ffffff"/>
-                <rect x="336.02" y="41.00" width="6.71" height="18.00" rx="3.36" ry="3.36" fill="#ffffff"/>
-                <rect x="348.44" y="37.50" width="6.71" height="25.00" rx="3.36" ry="3.36" fill="#ffffff"/>
-                <rect x="360.87" y="44.50" width="6.71" height="11.00" rx="3.36" ry="3.36" fill="#ffffff"/>
-                <rect x="373.29" y="44.50" width="6.71" height="11.00" rx="3.36" ry="3.36" fill="#ffffff"/>
-                <g transform="translate(20,20)"><path fill="#ffffff" d="M30,0A30,30,0,1,1,0,30,30,30,0,0,1,30,0M43.73,43.2a1.85,1.85,0,0,0-.47-2.43,5,5,0,0,0-.48-.31,30.64,30.64,0,0,0-5.92-2.72,37.07,37.07,0,0,0-11.56-1.84c-1.33.07-2.67.12-4,.23a52.44,52.44,0,0,0-7.08,1.12,3.45,3.45,0,0,0-.54.16,1.83,1.83,0,0,0-1.11,2.08A1.79,1.79,0,0,0,14.37,41a4.29,4.29,0,0,0,.88-.12,48.93,48.93,0,0,1,8.66-1.15,35.33,35.33,0,0,1,6.75.37,28.29,28.29,0,0,1,10.25,3.61,4.77,4.77,0,0,0,.5.27,1.85,1.85,0,0,0,2.33-.74M47.41,35a2.34,2.34,0,0,0-.78-3.19l-.35-.21a35.72,35.72,0,0,0-7.38-3.3,45.39,45.39,0,0,0-15.7-2.13,41.19,41.19,0,0,0-7.39.92c-1,.22-2,.48-2.94.77A2.26,2.26,0,0,0,11.29,30a2.32,2.32,0,0,0,1.44,2.2,2.47,2.47,0,0,0,1.67,0,37,37,0,0,1,10.38-1.46,43,43,0,0,1,7.91.74,35.46,35.46,0,0,1,9.58,3.18c.66.34,1.3.72,1.95,1.08A2.33,2.33,0,0,0,47.41,35m.35-8.49A2.79,2.79,0,0,0,52,24.11c0-.2,0-.4-.08-.6a2.78,2.78,0,0,0-1.4-1.85,35.91,35.91,0,0,0-6.41-2.91,56.19,56.19,0,0,0-16.86-2.89,58.46,58.46,0,0,0-7,.21,48.31,48.31,0,0,0-6.52,1c-.87.2-1.73.42-2.58.7a2.73,2.73,0,0,0-1.85,2.68,2.79,2.79,0,0,0,2,2.61,2.9,2.9,0,0,0,1.6,0c.87-.23,1.75-.47,2.63-.66a45.52,45.52,0,0,1,7.26-.91,57.42,57.42,0,0,1,6.4,0,53.7,53.7,0,0,1,6.11.72,42.63,42.63,0,0,1,8.49,2.35,33.25,33.25,0,0,1,4,2"/></g>
-                </svg>
-              <img src="./assets/Images/Spotify-Portfolio-Cover.jpg" alt=""></a>
+              <h3 class="video-quote">„Minimalismus bedeutet fokussiertes Design.“</h3>
             </div>
+            <svg xmlns="http://www.w3.org/2000/svg"   stroke-width="5px" width="175" height="75" viewBox="0 0 64 64"><path stroke-width="5px" stroke="#fdfdfd" fill="#fdfdfd" d="M15 51.3c-.6 0-1.2-.2-1.6-.7c-.9-.9-.9-2.3 0-3.2l30.3-30.3H19.5c-1.2 0-2.2-1-2.2-2.2s1-2.2 2.2-2.2H49c1.2 0 2.2 1 2.2 2.2v29.7c0 1.2-1 2.2-2.2 2.2s-2.2-1-2.2-2.2V20.5L16.6 50.7c-.4.4-1 .6-1.6.6"/></svg>
+          </a>
+          <a class="item2">
+           <p class="categoryTag">Weiterbildung</p>
+            <h3>FreeCodeCamp <br> Zertifikat</h3>
+            <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24"><path fill="var(--main-white)" d="M19.885 3.906a.62.62 0 0 0-.354.12c-.08.08-.161.196-.161.313c0 .2.236.474.673.923c1.822 1.754 2.738 3.903 2.732 6.494c-.007 2.867-.97 5.17-2.844 6.954c-.394.353-.556.63-.557.867c0 .116.08.237.16.353a.58.58 0 0 0 .353.162c.434 0 1.04-.512 1.833-1.509c1.542-1.89 2.24-3.978 2.279-6.824c.036-2.847-.857-4.777-2.603-6.77c-.63-.712-1.153-1.082-1.511-1.083m-15.769.002c-.358 0-.882.37-1.51 1.083C.858 6.984-.035 8.914.001 11.761c.04 2.846.737 4.933 2.28 6.824c.791.997 1.398 1.51 1.832 1.509a.57.57 0 0 0 .352-.162c.08-.116.16-.237.16-.353c0-.237-.162-.514-.556-.866c-1.873-1.785-2.837-4.087-2.844-6.955c-.006-2.591.91-4.74 2.732-6.494c.437-.449.674-.722.673-.923c0-.117-.08-.233-.161-.313a.62.62 0 0 0-.354-.12zm7.056.895s.655 2.081-2.649 6.727c-3.156 4.433 1.045 7.15 1.432 7.386c-.281-.18-2.001-1.5.402-5.423c.466-.77 1.076-1.47 1.834-3.041c0 0 .67.946.32 2.998c-.523 3.101 2.271 2.214 2.314 2.257c.976 1.15-.808 3.17-.917 3.233c-.108.061 5.096-3.13 1.399-7.935c-.253.253-.582 1.442-1.267 1.266c-.684-.174 2.125-3.494-2.868-7.468M9.955 18.916q.036.024.038.024z"/></svg>
+          </a>
+          <div class="item3">
+           <?xml version="1.0" encoding="UTF-8"?><svg id="Ebene_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 225"><defs><style>.cls-1{fill:none;}.cls-1,.cls-2{stroke-width:0px;}.cls-2{fill:var(--theme-color);}</style></defs><g id="Ebene_1-2"><polygon class="cls-1" points="155.75 225 375 5.74 375 0 332.24 0 107.24 225 155.75 225"/><polygon class="cls-1" points="162.76 0 0 162.76 0 211.27 211.27 0 162.76 0"/><polygon class="cls-1" points="219.25 0 0 219.26 0 225 42.76 225 267.76 0 219.25 0"/><polygon class="cls-1" points="375 225 375 183.21 333.21 225 375 225"/><polygon class="cls-1" points="106.27 0 0 106.27 0 154.78 154.78 0 106.27 0"/><polygon class="cls-1" points="212.24 225 375 62.24 375 13.73 163.73 225 212.24 225"/><polygon class="cls-1" points="99.26 225 324.25 0 275.74 0 50.75 225 99.26 225"/><polygon class="cls-1" points="325.22 225 375 175.22 375 126.71 276.72 225 325.22 225"/><polygon class="cls-1" points="0 0 0 41.79 41.79 0 0 0"/><polygon class="cls-1" points="268.73 225 375 118.73 375 70.22 220.22 225 268.73 225"/><polygon class="cls-1" points="49.78 0 0 49.78 0 98.29 98.28 0 49.78 0"/><polygon class="cls-2" points="275.74 0 267.76 0 42.76 225 50.75 225 275.74 0"/><polygon class="cls-2" points="98.28 0 0 98.29 0 106.27 106.27 0 98.28 0"/><polygon class="cls-2" points="154.78 0 0 154.78 0 162.76 162.76 0 154.78 0"/><polygon class="cls-2" points="211.27 0 0 211.27 0 219.26 219.25 0 211.27 0"/><polygon class="cls-2" points="41.79 0 0 41.79 0 49.78 49.78 0 41.79 0"/><polygon class="cls-2" points="220.22 225 375 70.22 375 62.24 212.24 225 220.22 225"/><polygon class="cls-2" points="163.73 225 375 13.73 375 5.74 155.75 225 163.73 225"/><polygon class="cls-2" points="276.72 225 375 126.71 375 118.73 268.73 225 276.72 225"/><polygon class="cls-2" points="333.21 225 375 183.21 375 175.22 325.22 225 333.21 225"/><polygon class="cls-2" points="107.24 225 332.24 0 324.25 0 99.26 225 107.24 225"/></g></svg>
+          </div>
+          <!-- <div class="item4">             
+           <h3>Hier Platz frei</h3></div>
+          <div class="item5">
+            <h3>Hier Platz frei</h3>
+            </div> -->
+          <div class="item6">
+            <div class="innerSlider">
+              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 512 512"><path fill="var(--main-font-color)" d="M322.481 29.346L512 482.654V29.346zM0 29.346v453.308L189.519 29.346zm256.32 166.896l120.797 286.412h-79.18L261.87 391.31H173.3z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 512 512"><path fill="var(--main-font-color)" fill-rule="evenodd" d="M512 512H0V0h512zM406.41 217.014v-39.71c-6.54-2.912-43.991-13.625-73.578-2.335c-42.62 16.262-41.089 65.252-24.916 84.479c20.955 24.912 73.082 34.2 64.552 58.652c-4.417 12.662-25.038 14.866-43.218 10.615c-16.93-3.958-31.65-13.986-31.65-13.986v42.045s14.55 8.112 32.408 10.042c22.893 2.473 51.589-2.197 65.965-14.975c25.59-22.747 29.52-73.137-18.975-96.536c-40.355-19.47-39.691-25.027-39.408-35.014c.38-13.376 28.464-21.61 68.82-3.277M188.79 105.575c33.577 1.168 82.922 16.643 82.922 82.63s-60.374 87.64-115.463 82.922v93.433H115.21V106.45s40.001-2.043 73.579-.875m10.657 124.675c17.696-6.457 29.198-20.338 29.198-41.9c0-22.861-11.705-38.342-29.607-42.715c-19.386-4.737-42.789-1.945-42.789-1.945v90.044s32.395.458 43.198-3.484" clip-rule="evenodd"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 512 512"><path fill="var(--main-font-color)" d="M265.301 269.334c-1.24-39.937 26.821-71.547 67.562-60.916v122.94c-40.599 9.808-69.274-14.325-67.562-62.024M0 0v512h512V0zm177.804 369.014H134.61v-266.92h43.194zm135.122 3.322c-49.296 1.424-92.89-29.841-91.927-100.787c.774-57.015 36.303-108.212 111.864-103.002v-66.453h44.302v239.785c0 4.067.37 9.887 1.363 14.713c-17.01 9.418-39.047 15.574-65.602 15.744"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 512 512"><path fill="var(--main-font-color)" fill-rule="evenodd" d="M172.049 108.008h53.334l76.693 256.941H255.75l-19.076-73.189h-74.746l-19.466 73.19h-40.877l70.465-244.873zm54.113 145.99L199.689 145.38l-27.251 108.616zm155.333-80H339.45V364.95h42.045zM359.93 99.811c-13.621 0-24.663 10.915-24.663 24.38s11.042 24.381 24.663 24.381s24.664-10.915 24.664-24.38s-11.042-24.381-24.664-24.381M512 512H0V0h512z" clip-rule="evenodd"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 512 512"><path fill="var(--main-font-color)" d="M0 0v512h512V0zm264.095 237.798c-18.461 26.616-55.42 40.048-106.423 37.639v97.132H114.13V103.5l65.872-1.116c54.756-2.06 96.733 26.942 97.133 84.852c-.472 20.392-3.909 37.4-13.04 50.563m142.551-29.35c-.053 1.732-.938 2.274-2.233 2.233c-16.247-1.473-32.992 1-46.891 4.466V372.57h-43.544V214.03c.175-9.395-.341-16.216-1.116-23.446c-.164-.827-.19-2.562 2.233-3.35c21.767-7.895 54.646-17.423 89.318-16.746c1.37-.007 2.222.61 2.233 2.233zm-174.17-20.097c.051 13.428-2.17 23.026-7.294 29.907c-13.199 17.723-39.21 17.42-47.412 18.102h-20.098v-94.9h23.446c38.09.267 50.778 19.538 51.358 46.891"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 512 512"><path fill="var(--main-font-color)" d="M389.186 214.341c4.678 8.911 6.247 18.416 6.107 28.248h-67.587c4.105-26.449 14.979-42.58 36.555-42.095c12.549 0 20.857 4.622 24.925 13.847m-248.688 36.002H198.1l-29.909-112.99c-3.756 25.557-16.927 69.1-27.693 112.99M512 0v512H0V0zM274.413 365.548L195.228 98.582h-54.73c0 5.92-.38 12.376-1.108 14.955c-.744 2.596-1.108 4.985-1.108 7.2L68.336 365.548h41.384l19.7-75.326h77.543l21.684 75.326zm161.852-120.744c0-17.724-5.176-35.447-15.508-53.171c-10.35-17.724-28.802-26.586-55.388-26.586c-25.858 0-45.971 10.16-60.371 30.463C277.833 231.333 275 299 303.89 338.408c13.656 20.32 36.365 30.464 68.126 30.464c17.393-.044 33.978-2.142 48.74-8.863c1.723-1.774 2.168-2.616 2.216-5.539v-29.909c-.05-2.074-1.187-2.16-3.323-2.214c-21.615 10.563-53.033 10.187-68.928 1.022c-14.79-8.527-23.485-26.35-23.015-47.547h63.141c11.078 0 19.94-.174 26.586-.554c6.647-.364 11.44-.918 14.4-1.662c.728 0 1.282-.174 1.662-.554l1.662-1.662c0-2.215.173-5.712.554-10.524c.363-4.794.554-10.142.554-16.062"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 512 512"><path fill="var(--main-font-color)" d="M167.796 154.298c5.586 26.531 20.946 81.222 27.23 106.357h-53.528c9.31-35.142 21.644-79.826 26.298-106.357M512 0v512H0V0zM266.673 367.709l-73.968-249.018h-51.207c-.067 8.093-.624 15.525-2.327 21.41L73.769 367.71h39.157l18.798-69.818h72.843l19.394 69.818zm162.77-11.462c-.744-13.631-1.69-22.136-1.69-25.076V183.855h-39.331v147.781c-30.854 10.624-57.096 2.241-55.855-29.789V183.855H290.91v122.88c-1.028 74.08 68.934 77.908 138.535 49.512"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 512 512"><path fill="var(--main-font-color)" d="M0 0v512h512V0zm217.538 367.527L170.2 269.97l-45.673 97.324H80.013l65.508-124.798L82.184 116.3h46.202l44.842 95.927l44.466-96.16h43.37l-63.389 122.47l67.132 128.99zm202.959-10.245c-19.558 9.314-40.048 13.505-59.606 13.505c-50.524.233-86.613-30.967-86.613-94.298c1.644-64.876 44.872-101.077 105.473-96.16V116.3h41.444v215.604c.086 25.713 2.924 23.24-.698 25.378M379.75 216.884v115.252c-40.907 10.615-63.525-14.28-63.33-57.51c.154-44.334 29.282-67.343 63.33-57.742"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24"><path fill="var(--main-font-color)" d="M15.332 8.668a3.333 3.333 0 0 0 0-6.663H8.668a3.333 3.333 0 0 0 0 6.663a3.333 3.333 0 0 0 0 6.665a3.333 3.333 0 0 0 0 6.664A3.334 3.334 0 0 0 12 18.664V8.668z"/><circle cx="15.332" cy="12" r="3.332" fill="var(--main-font-color)"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24"><path fill="var(--main-font-color)" d="m21.29 4.1l-4.12-2a1.4 1.4 0 0 0-.48-.1h-.08a1.18 1.18 0 0 0-.72.24l-.14.12l-7.88 7.19L4.44 7a.83.83 0 0 0-.54-.17a.88.88 0 0 0-.53.17l-1.1 1a.8.8 0 0 0-.27.61a.84.84 0 0 0 .27.62l3 2.71l-3 2.72a.84.84 0 0 0 0 1.23l1.1 1a.9.9 0 0 0 .6.22a.93.93 0 0 0 .47-.17l3.43-2.61l7.88 7.19a1.2 1.2 0 0 0 .76.36h.17a1 1 0 0 0 .49-.12l4.12-2a1.25 1.25 0 0 0 .71-1.1V5.23a1.26 1.26 0 0 0-.71-1.13M17 16.47l-6-4.53l6-4.53z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 128 128"><path fill="var(--main-font-color)" d="M27.235 13.885c-7.177 0-12.486 6.284-12.249 13.099c.228 6.546-.068 15.026-2.203 21.94c-2.14 6.936-5.76 11.319-11.673 11.883v6.387c5.913.563 9.533 4.947 11.673 11.883c2.135 6.914 2.43 15.394 2.203 21.94c-.238 6.815 5.072 13.098 12.249 13.098h73.54c7.177 0 12.486-6.284 12.249-13.098c-.228-6.546.068-15.026 2.202-21.94c2.14-6.935 5.751-11.319 11.664-11.883v-6.387c-5.913-.563-9.523-4.947-11.664-11.883c-2.134-6.914-2.43-15.394-2.202-21.94c.237-6.815-5.072-13.099-12.25-13.099zm58.114 61.686c0 9.384-7.002 15.073-18.621 15.073H45.306a.49.49 0 0 1-.491-.491V37.827a.49.49 0 0 1 .491-.492h21.309c9.689 0 16.047 5.246 16.047 13.3c0 5.653-4.277 10.713-9.727 11.6v.296c7.418.813 12.414 5.948 12.414 13.04M64.571 44.096H53.293v15.922h9.5c7.342 0 11.391-2.955 11.391-8.238c0-4.95-3.481-7.684-9.613-7.684m-11.278 22.24v17.548h11.695c7.645 0 11.695-3.066 11.695-8.83c0-5.763-4.163-8.718-12.187-8.718z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24"><path fill="var(--main-font-color)" d="M4.136 3.012h15.729l-1.431 16.15l-6.451 1.826l-6.414-1.826zm5.266 7.302l-.173-2.035l7.533.002l.173-1.963l-9.87-.002l.522 5.998h6.835l-.243 2.566l-2.179.602l-2.214-.605l-.141-1.58H7.691l.247 3.123L12 17.506l4.028-1.08l.558-6.111H9.402z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24"><path fill="var(--main-font-color)" d="M4.192 3.143h15.615l-1.42 16.034l-6.404 1.812l-6.369-1.813zM16.9 6.424l-9.8-.002l.158 1.949l7.529.002l-.189 2.02H9.66l.179 1.913h4.597l-.272 2.62l-2.164.598l-2.197-.603l-.141-1.569h-1.94l.216 2.867L12 17.484l3.995-1.137z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24"><path fill="var(--main-font-color)" d="M3 3h18v18H3zm16.525 13.707c-.131-.821-.666-1.511-2.252-2.155c-.552-.259-1.165-.438-1.349-.854c-.068-.248-.078-.382-.034-.529c.113-.484.687-.629 1.137-.495c.293.09.563.315.732.676c.775-.507.775-.507 1.316-.844c-.203-.314-.304-.451-.439-.586c-.473-.528-1.103-.798-2.126-.775l-.528.067c-.507.124-.991.395-1.283.754c-.855.968-.608 2.655.427 3.354c1.023.765 2.521.933 2.712 1.653c.18.878-.652 1.159-1.475 1.058c-.607-.136-.945-.439-1.316-1.002l-1.372.788c.157.359.337.517.607.832c1.305 1.316 4.568 1.249 5.153-.754c.021-.067.18-.528.056-1.237zm-6.737-5.434h-1.686c0 1.453-.007 2.898-.007 4.354c0 .924.047 1.772-.104 2.033c-.247.517-.886.451-1.175.359c-.297-.146-.448-.349-.623-.641c-.047-.078-.082-.146-.095-.146l-1.368.844c.229.473.563.879.994 1.137c.641.383 1.502.507 2.404.305c.588-.17 1.095-.519 1.358-1.059c.384-.697.302-1.553.299-2.509c.008-1.541 0-3.083 0-4.635z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 128 128"><path fill="var(--main-font-color)" fill-rule="evenodd" d="M64.094 126.224c34.275-.052 62.021-27.933 62.021-62.325c0-33.833-27.618-61.697-60.613-62.286C30.85.995 1.894 29.113 1.885 63.21c-.01 35.079 27.612 63.064 62.209 63.014M63.993 4.63c32.907-.011 59.126 26.725 59.116 60.28c-.011 31.679-26.925 58.18-59.092 58.187c-32.771.007-59.125-26.563-59.124-59.608c.002-32.193 26.766-58.848 59.1-58.859M39.157 35.896c.538 1.793-.968 2.417-2.569 2.542c-1.685.13-3.369.257-5.325.406c6.456 19.234 12.815 38.183 19.325 57.573c.464-.759.655-.973.739-1.223c3.574-10.682 7.168-21.357 10.651-32.069c.318-.977.16-2.271-.188-3.275c-1.843-5.32-4.051-10.524-5.667-15.908c-1.105-3.686-2.571-6.071-6.928-5.644c-.742.073-1.648-1.524-2.479-2.349c1.005-.6 2.003-1.704 3.017-1.719a850 850 0 0 1 26.618.008c1.018.017 2.016 1.15 3.021 1.765c-.88.804-1.639 2.01-2.668 2.321c-1.651.498-3.482.404-5.458.58l19.349 57.56c2.931-9.736 5.658-18.676 8.31-27.639c2.366-8.001.956-15.473-3.322-22.52c-1.286-2.119-2.866-4.175-3.595-6.486c-.828-2.629-1.516-5.622-1.077-8.259c.745-4.469 4.174-6.688 8.814-7.113C74.333.881 34.431 9.317 19.728 34.922c5.66-.261 11.064-.604 16.472-.678c1.022-.013 2.717.851 2.957 1.652m10.117 77.971c-.118.345-.125.729-.218 1.302c10.943 3.034 21.675 2.815 32.659-.886l-16.78-45.96c-5.37 15.611-10.52 30.575-15.661 45.544m-8.456-2.078l-25.281-69.35c-11.405 22.278-2.729 56.268 25.281 69.35m76.428-44.562c.802-10.534-2.832-25.119-5.97-27.125c-.35 3.875-.106 8.186-1.218 12.114c-2.617 9.255-5.817 18.349-8.899 27.468c-3.35 9.912-6.832 19.779-10.257 29.666c16.092-9.539 24.935-23.618 26.344-42.123" clip-rule="evenodd"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 640 512"><path fill="var(--main-font-color)" d="M640 64L435.8 463.2H244l85.5-165.5h-3.8C255.1 389.3 149.9 449.5 0 463.2V300.1s95.9-5.7 152.3-64.9H0V64h171.1v140.8h3.8l70-140.8h129.4v139.9h3.8L450.7 64z"/></svg>
+          </div>
+          </div>
+          <div class="item7">
+           <p class="categoryTag">Ausbildung</p>
+           <div class="Note">
+             <h3 >1,2</h3>
+             <p>Abschlussn&shy;ote</p>
            </div>
-         </div>
-         <div class="container work-OuterContainer">
-         <div class="row">
-         <a target="_blank" href="./assets/Laurin-AP-Screendesign-Desktop.pdf" id="implementation" class="col col-xsm-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 work-innerContainer">
-          <div  class="work-div">
-            <h2>Abschluss&shy;prüfung</h2>
-            <h3>SolarRegina</h3>
           </div>
-          <h5>Konzeption – Gestaltung – Umsetzung</h5>
-          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 16 16">-><path fill="var(--theme-color)" fill-rule="evenodd" d="m13.85 4.44l-3.28-3.3l-.35-.14H2.5l-.5.5V7h1V2h6v3.5l.5.5H13v1h1V4.8zM10 5V2l3 3zM2.5 8l-.5.5v6l.5.5h11l.5-.5v-6l-.5-.5zM13 13v1H3V9h10zm-8-1h-.32v1H4v-3h1.06c.75 0 1.13.36 1.13 1a.94.94 0 0 1-.32.72A1.33 1.33 0 0 1 5 12m-.06-1.45h-.26v.93h.26c.36 0 .54-.16.54-.47s-.18-.46-.54-.46M9 12.58a1.48 1.48 0 0 0 .44-1.12c0-1-.53-1.46-1.6-1.46H6.78v3h1.06A1.6 1.6 0 0 0 9 12.58m-1.55-.13v-1.9h.33a.94.94 0 0 1 .7.25a.9.9 0 0 1 .25.67a1 1 0 0 1-.25.72a.94.94 0 0 1-.69.26zm4.45-.61h-.97V13h-.68v-3h1.74v.55h-1.06v.74h.97z" clip-rule="evenodd"/></svg>
-        </a>
-        <a target="_blank" href="./assets/Laurin-AP-Dokumentation.pdf" id="documentation" class="col col-xsm-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 work-innerContainer">
-          <div class="work-div">
-            <h2>Abschluss&shy;prüfung</h2>
-            <h3>SolarRegina</h3>
+          <div class="item8">
+          <ul class="pills-box">
+            <li class="pills-content">Strategisch</li>
+            <li class="pills-content">Qualitätsbewusst</li>
+            <li class="pills-content">Kommunikativ</li>
+            <li class="pills-content">Kreativ</li>
+            <li class="pills-content">Analytisch</li>
+            <li class="pills-content">Flexibel</li>
+            <li class="pills-content">Teamfähig</li>
+           </ul>
           </div>
-          <h5>Dokumentation</h5>
-          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 16 16">-><path fill="var(--theme-color)" fill-rule="evenodd" d="m13.85 4.44l-3.28-3.3l-.35-.14H2.5l-.5.5V7h1V2h6v3.5l.5.5H13v1h1V4.8zM10 5V2l3 3zM2.5 8l-.5.5v6l.5.5h11l.5-.5v-6l-.5-.5zM13 13v1H3V9h10zm-8-1h-.32v1H4v-3h1.06c.75 0 1.13.36 1.13 1a.94.94 0 0 1-.32.72A1.33 1.33 0 0 1 5 12m-.06-1.45h-.26v.93h.26c.36 0 .54-.16.54-.47s-.18-.46-.54-.46M9 12.58a1.48 1.48 0 0 0 .44-1.12c0-1-.53-1.46-1.6-1.46H6.78v3h1.06A1.6 1.6 0 0 0 9 12.58m-1.55-.13v-1.9h.33a.94.94 0 0 1 .7.25a.9.9 0 0 1 .25.67a1 1 0 0 1-.25.72a.94.94 0 0 1-.69.26zm4.45-.61h-.97V13h-.68v-3h1.74v.55h-1.06v.74h.97z" clip-rule="evenodd"/></svg>
-        </a> 
-       </div>
-      </div>
-    </div>
-     </main>
-     <footer>
-      <div class="marquee-container">
-        <div class="marquee">
-          <h3>
-            Effiziente Kommunikation – Nachhaltiger Erfolg. – Effiziente Kommunikation – Nachhaltiger Erfolg. – 
-          </h3>
-          <h3>
-            Effiziente Kommunikation – Nachhaltiger Erfolg. – Effiziente Kommunikation – Nachhaltiger Erfolg. –
-          </h3>
-        </div>
-      </div> 
-       <div class="section">
-         <div class="container">
-           <div class="row">
-             <div class="col col-xsm-12 col-sm-12 col-md-8 col-lg-8 col-xl-9">
-              <div class="footer-c2a">
-                <h3>Gemeinsam Großes schaffen!</h3>
-                <h4>Auf der Suche nach Neuem!</h4>
-              </div>
+          <div class="item9">
+           <p class="categoryTag">Spotify Playlist</p>
+           <div>
+             <div>              
+               <h3>Flow State</h3>
+               <p><b>Struktur. Rhythmus. Fokus.</b> Musik die den Flow am Laufen hält.</p>
              </div>
-             <div class="col col-xsm-12 col-sm-12 col-md-4 col-lg-4 col-xl-3">
-              <div class="footer-icons">
-                <p>Sagt doch einfach mal Hallo!</p>
-                 <div>
-                   <a href="mailto:Laurin.Felgendreher@outlook.com" class="contact-mail">                    
-                     <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 24 24"><path fill="var(--main-white)" d="M7 17q-.825 0-1.412-.587T5 15V5q0-.825.588-1.412T7 3h14q.825 0 1.413.588T23 5v10q0 .825-.587 1.413T21 17zm7-4.7L7 7.425V15h14V7.425zm0-2.45L21 5H7zM3 21q-.825 0-1.412-.587T1 19V6.5h2V19h16.5v2zM21 7.35V5H7v2.35V5h14z"/></svg>
-                   </a>
-                   </a>
-                   <a href="https://www.linkedin.com/in/laurin-felgendreher-ab8495256/" target="_blank" rel="noopener noreferrer nofollow" class="contact-linkedIn"> 
-                     <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 128 128"><path fill="#fdfdfd" d="M116 3H12a8.91 8.91 0 0 0-9 8.8v104.42a8.91 8.91 0 0 0 9 8.78h104a8.93 8.93 0 0 0 9-8.81V11.77A8.93 8.93 0 0 0 116 3M39.17 107H21.06V48.73h18.11zm-9-66.21a10.5 10.5 0 1 1 10.49-10.5a10.5 10.5 0 0 1-10.54 10.48zM107 107H88.89V78.65c0-6.75-.12-15.44-9.41-15.44s-10.87 7.36-10.87 15V107H50.53V48.73h17.36v8h.24c2.42-4.58 8.32-9.41 17.13-9.41C103.6 47.28 107 59.35 107 75z"/></svg>
-                   
-                   </a>
-
-                   <a href="https://github.com/LaurenceRimturner" target="_blank" rel="noopener noreferrer nofollow" class="contact-github"> 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 64 64"><path fill="var(--main-white)" d="M32 1.8c-17 0-31 13.8-31 31C1 46.4 9.9 58 22.3 62.2c1.6.3 2.1-.7 2.1-1.4s0-2.7-.1-5.4c-8.6 2-10.4-4.2-10.4-4.2c-1.4-3.5-3.5-4.5-3.5-4.5c-2.8-2 .1-2 .1-2c3.1.1 4.8 3.2 4.8 3.2c2.7 4.8 7.3 3.4 9 2.5c.3-2 1.1-3.4 2-4.2c-6.8-.7-14.1-3.4-14.1-15.2c0-3.4 1.3-6.1 3.2-8.2c-.3-.7-1.4-3.9.3-8.2c0 0 2.7-.8 8.6 3.2c2.5-.7 5.1-1.1 7.8-1.1s5.4.3 7.8 1.1c5.9-3.9 8.5-3.2 8.5-3.2c1.7 4.2.7 7.5.3 8.2c2 2.1 3.2 4.9 3.2 8.2c0 11.8-7.3 14.5-14.1 15.2c1.1 1 2.1 3 2.1 5.8c0 4.2-.1 7.5-.1 8.5c0 .8.6 1.7 2.1 1.4C54.1 57.8 63 46.3 63 32.6c-.1-17-14-30.8-31-30.8"/></svg>
+             <a href="https://open.spotify.com/playlist/3Vx1IYaiBeNLhPR4tiHxGg?si=9a0ee50c39d8445a&pt=8deb67f0fc67581358d401cdc671d96b" target="_blank" rel="noopener noreferrer nofollow"
+             ><svg width="100%" height="100" viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+               <rect x="0" y="0" width="400" height="100" fill="var(--theme-color)"/>
+               <rect x="100.00" y="44.50" width="6.71" height="11.00" rx="3.36" ry="3.36" fill="#ffffff"/>
+               <rect x="112.42" y="23.50" width="6.71" height="53.00" rx="3.36" ry="3.36" fill="#ffffff"/>
+               <rect x="124.84" y="37.50" width="6.71" height="25.00" rx="3.36" ry="3.36" fill="#ffffff"/>
+               <rect x="137.27" y="23.50" width="6.71" height="53.00" rx="3.36" ry="3.36" fill="#ffffff"/>
+               <rect x="149.69" y="23.50" width="6.71" height="53.00" rx="3.36" ry="3.36" fill="#ffffff"/>
+               <rect x="162.11" y="44.50" width="6.71" height="11.00" rx="3.36" ry="3.36" fill="#ffffff"/>
+               <rect x="174.53" y="20.00" width="6.71" height="60.00" rx="3.36" ry="3.36" fill="#ffffff"/>
+               <rect x="186.96" y="41.00" width="6.71" height="18.00" rx="3.36" ry="3.36" fill="#ffffff"/>
+               <rect x="199.38" y="27.00" width="6.71" height="46.00" rx="3.36" ry="3.36" fill="#ffffff"/>
+               <rect x="211.80" y="23.50" width="6.71" height="53.00" rx="3.36" ry="3.36" fill="#ffffff"/>
+               <rect x="224.22" y="37.50" width="6.71" height="25.00" rx="3.36" ry="3.36" fill="#ffffff"/>
+               <rect x="236.64" y="20.00" width="6.71" height="60.00" rx="3.36" ry="3.36" fill="#ffffff"/>
+               <rect x="249.07" y="20.00" width="6.71" height="60.00" rx="3.36" ry="3.36" fill="#ffffff"/>
+               <rect x="261.49" y="37.50" width="6.71" height="25.00" rx="3.36" ry="3.36" fill="#ffffff"/>
+               <rect x="273.91" y="44.50" width="6.71" height="11.00" rx="3.36" ry="3.36" fill="#ffffff"/>
+               <rect x="286.33" y="30.50" width="6.71" height="39.00" rx="3.36" ry="3.36" fill="#ffffff"/>
+               <rect x="298.76" y="20.00" width="6.71" height="60.00" rx="3.36" ry="3.36" fill="#ffffff"/>
+               <rect x="311.18" y="34.00" width="6.71" height="32.00" rx="3.36" ry="3.36" fill="#ffffff"/>
+               <rect x="323.60" y="30.50" width="6.71" height="39.00" rx="3.36" ry="3.36" fill="#ffffff"/>
+               <rect x="336.02" y="41.00" width="6.71" height="18.00" rx="3.36" ry="3.36" fill="#ffffff"/>
+               <rect x="348.44" y="37.50" width="6.71" height="25.00" rx="3.36" ry="3.36" fill="#ffffff"/>
+               <rect x="360.87" y="44.50" width="6.71" height="11.00" rx="3.36" ry="3.36" fill="#ffffff"/>
+               <rect x="373.29" y="44.50" width="6.71" height="11.00" rx="3.36" ry="3.36" fill="#ffffff"/>
+               <g transform="translate(20,20)"><path fill="#ffffff" d="M30,0A30,30,0,1,1,0,30,30,30,0,0,1,30,0M43.73,43.2a1.85,1.85,0,0,0-.47-2.43,5,5,0,0,0-.48-.31,30.64,30.64,0,0,0-5.92-2.72,37.07,37.07,0,0,0-11.56-1.84c-1.33.07-2.67.12-4,.23a52.44,52.44,0,0,0-7.08,1.12,3.45,3.45,0,0,0-.54.16,1.83,1.83,0,0,0-1.11,2.08A1.79,1.79,0,0,0,14.37,41a4.29,4.29,0,0,0,.88-.12,48.93,48.93,0,0,1,8.66-1.15,35.33,35.33,0,0,1,6.75.37,28.29,28.29,0,0,1,10.25,3.61,4.77,4.77,0,0,0,.5.27,1.85,1.85,0,0,0,2.33-.74M47.41,35a2.34,2.34,0,0,0-.78-3.19l-.35-.21a35.72,35.72,0,0,0-7.38-3.3,45.39,45.39,0,0,0-15.7-2.13,41.19,41.19,0,0,0-7.39.92c-1,.22-2,.48-2.94.77A2.26,2.26,0,0,0,11.29,30a2.32,2.32,0,0,0,1.44,2.2,2.47,2.47,0,0,0,1.67,0,37,37,0,0,1,10.38-1.46,43,43,0,0,1,7.91.74,35.46,35.46,0,0,1,9.58,3.18c.66.34,1.3.72,1.95,1.08A2.33,2.33,0,0,0,47.41,35m.35-8.49A2.79,2.79,0,0,0,52,24.11c0-.2,0-.4-.08-.6a2.78,2.78,0,0,0-1.4-1.85,35.91,35.91,0,0,0-6.41-2.91,56.19,56.19,0,0,0-16.86-2.89,58.46,58.46,0,0,0-7,.21,48.31,48.31,0,0,0-6.52,1c-.87.2-1.73.42-2.58.7a2.73,2.73,0,0,0-1.85,2.68,2.79,2.79,0,0,0,2,2.61,2.9,2.9,0,0,0,1.6,0c.87-.23,1.75-.47,2.63-.66a45.52,45.52,0,0,1,7.26-.91,57.42,57.42,0,0,1,6.4,0,53.7,53.7,0,0,1,6.11.72,42.63,42.63,0,0,1,8.49,2.35,33.25,33.25,0,0,1,4,2"/></g>
+               </svg>
+             <img src="./assets/Images/Spotify-Portfolio-Cover.jpg" alt=""></a>
+           </div>
+          </div>
+        </div>
+        <div class="container work-OuterContainer">
+        <div class="row">
+        <a target="_blank" href="./assets/Laurin-AP-Screendesign-Desktop.pdf" id="implementation" class="col col-xsm-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 work-innerContainer">
+         <div  class="work-div">
+           <h2>Abschluss&shy;prüfung</h2>
+           <h3>SolarRegina</h3>
+         </div>
+         <h5>Konzeption – Gestaltung – Umsetzung</h5>
+         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 16 16">-><path fill="var(--theme-color)" fill-rule="evenodd" d="m13.85 4.44l-3.28-3.3l-.35-.14H2.5l-.5.5V7h1V2h6v3.5l.5.5H13v1h1V4.8zM10 5V2l3 3zM2.5 8l-.5.5v6l.5.5h11l.5-.5v-6l-.5-.5zM13 13v1H3V9h10zm-8-1h-.32v1H4v-3h1.06c.75 0 1.13.36 1.13 1a.94.94 0 0 1-.32.72A1.33 1.33 0 0 1 5 12m-.06-1.45h-.26v.93h.26c.36 0 .54-.16.54-.47s-.18-.46-.54-.46M9 12.58a1.48 1.48 0 0 0 .44-1.12c0-1-.53-1.46-1.6-1.46H6.78v3h1.06A1.6 1.6 0 0 0 9 12.58m-1.55-.13v-1.9h.33a.94.94 0 0 1 .7.25a.9.9 0 0 1 .25.67a1 1 0 0 1-.25.72a.94.94 0 0 1-.69.26zm4.45-.61h-.97V13h-.68v-3h1.74v.55h-1.06v.74h.97z" clip-rule="evenodd"/></svg>
+       </a>
+       <a target="_blank" href="./assets/Laurin-AP-Dokumentation.pdf" id="documentation" class="col col-xsm-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 work-innerContainer">
+         <div class="work-div">
+           <h2>Abschluss&shy;prüfung</h2>
+           <h3>SolarRegina</h3>
+         </div>
+         <h5>Dokumentation</h5>
+         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 16 16">-><path fill="var(--theme-color)" fill-rule="evenodd" d="m13.85 4.44l-3.28-3.3l-.35-.14H2.5l-.5.5V7h1V2h6v3.5l.5.5H13v1h1V4.8zM10 5V2l3 3zM2.5 8l-.5.5v6l.5.5h11l.5-.5v-6l-.5-.5zM13 13v1H3V9h10zm-8-1h-.32v1H4v-3h1.06c.75 0 1.13.36 1.13 1a.94.94 0 0 1-.32.72A1.33 1.33 0 0 1 5 12m-.06-1.45h-.26v.93h.26c.36 0 .54-.16.54-.47s-.18-.46-.54-.46M9 12.58a1.48 1.48 0 0 0 .44-1.12c0-1-.53-1.46-1.6-1.46H6.78v3h1.06A1.6 1.6 0 0 0 9 12.58m-1.55-.13v-1.9h.33a.94.94 0 0 1 .7.25a.9.9 0 0 1 .25.67a1 1 0 0 1-.25.72a.94.94 0 0 1-.69.26zm4.45-.61h-.97V13h-.68v-3h1.74v.55h-1.06v.74h.97z" clip-rule="evenodd"/></svg>
+       </a> 
+      </div>
+     </div>
+   </div>
+    </main>
+    <footer>
+     <div class="marquee-container">
+       <div class="marquee">
+         <h3>
+           Effiziente Kommunikation – Nachhaltiger Erfolg. – Effiziente Kommunikation – Nachhaltiger Erfolg. – 
+         </h3>
+         <h3>
+           Effiziente Kommunikation – Nachhaltiger Erfolg. – Effiziente Kommunikation – Nachhaltiger Erfolg. –
+         </h3>
+       </div>
+     </div> 
+      <div class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col col-xsm-12 col-sm-12 col-md-8 col-lg-8 col-xl-9">
+             <div class="footer-c2a">
+               <h3>Gemeinsam Großes schaffen!</h3>
+               <h4>Auf der Suche nach Neuem!</h4>
+             </div>
+            </div>
+            <div class="col col-xsm-12 col-sm-12 col-md-4 col-lg-4 col-xl-3">
+             <div class="footer-icons">
+               <p>Sagt doch einfach mal Hallo!</p>
+                <div>
+                  <a href="mailto:Laurin.Felgendreher@outlook.com" class="contact-mail">                    
+                    <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 24 24"><path fill="var(--main-white)" d="M7 17q-.825 0-1.412-.587T5 15V5q0-.825.588-1.412T7 3h14q.825 0 1.413.588T23 5v10q0 .825-.587 1.413T21 17zm7-4.7L7 7.425V15h14V7.425zm0-2.45L21 5H7zM3 21q-.825 0-1.412-.587T1 19V6.5h2V19h16.5v2zM21 7.35V5H7v2.35V5h14z"/></svg>
+                  </a>
+                  </a>
+                  <a href="https://www.linkedin.com/in/laurin-felgendreher-ab8495256/" target="_blank" rel="noopener noreferrer nofollow" class="contact-linkedIn"> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 128 128"><path fill="#fdfdfd" d="M116 3H12a8.91 8.91 0 0 0-9 8.8v104.42a8.91 8.91 0 0 0 9 8.78h104a8.93 8.93 0 0 0 9-8.81V11.77A8.93 8.93 0 0 0 116 3M39.17 107H21.06V48.73h18.11zm-9-66.21a10.5 10.5 0 1 1 10.49-10.5a10.5 10.5 0 0 1-10.54 10.48zM107 107H88.89V78.65c0-6.75-.12-15.44-9.41-15.44s-10.87 7.36-10.87 15V107H50.53V48.73h17.36v8h.24c2.42-4.58 8.32-9.41 17.13-9.41C103.6 47.28 107 59.35 107 75z"/></svg>
                   
                   </a>
-                 </div>
-              </div>
-           </div>
-           <div style="padding: 0;" class="col col-xsm-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-            <div class="meta-Footer">
-              <p>Design mit Haltung – durchdacht, gestaltet, realisiert.</p>
-              <p style="font-size: 12px;">P.S.: Wer gerne in Quellcodes stöbert, könnte hier mehr entdecken… 👀</p>
-            </div> 
+
+                  <a href="https://github.com/LaurenceRimturner" target="_blank" rel="noopener noreferrer nofollow" class="contact-github"> 
+                   <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 64 64"><path fill="var(--main-white)" d="M32 1.8c-17 0-31 13.8-31 31C1 46.4 9.9 58 22.3 62.2c1.6.3 2.1-.7 2.1-1.4s0-2.7-.1-5.4c-8.6 2-10.4-4.2-10.4-4.2c-1.4-3.5-3.5-4.5-3.5-4.5c-2.8-2 .1-2 .1-2c3.1.1 4.8 3.2 4.8 3.2c2.7 4.8 7.3 3.4 9 2.5c.3-2 1.1-3.4 2-4.2c-6.8-.7-14.1-3.4-14.1-15.2c0-3.4 1.3-6.1 3.2-8.2c-.3-.7-1.4-3.9.3-8.2c0 0 2.7-.8 8.6 3.2c2.5-.7 5.1-1.1 7.8-1.1s5.4.3 7.8 1.1c5.9-3.9 8.5-3.2 8.5-3.2c1.7 4.2.7 7.5.3 8.2c2 2.1 3.2 4.9 3.2 8.2c0 11.8-7.3 14.5-14.1 15.2c1.1 1 2.1 3 2.1 5.8c0 4.2-.1 7.5-.1 8.5c0 .8.6 1.7 2.1 1.4C54.1 57.8 63 46.3 63 32.6c-.1-17-14-30.8-31-30.8"/></svg>
+                 
+                 </a>
+                </div>
+             </div>
           </div>
+          <div style="padding: 0;" class="col col-xsm-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+           <div class="meta-Footer">
+             <p>Design mit Haltung – durchdacht, gestaltet, realisiert.</p>
+             <p style="font-size: 12px;">P.S.: Wer gerne in Quellcodes stöbert, könnte hier mehr entdecken… 👀</p>
+           </div> 
          </div>
-       </div>
-     </footer>
-     <script src="script.js"></script>
-   </body>
- </html>
- 
- <!-- 
- ⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠻⣿⣿⣿⣿⣿⣿⣿
- ⣿⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣄⡀⠀⢻⣿⣿⣿⣿⣿⣿
- ⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⣿⠃⢰⣿⣿⣿⣿⣿⣿
- ⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣿⣿⣿⣿⣿
- ⣿⣿⣿⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀⢶⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿
- ⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⢠⡀⠐⠀⠀⠀⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿
- ⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⢸⣷⡄⠀⠣⣄⡀⠀⠉⠛⢿⣿⣿⣿⣿
- ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠀⣿⣿⣦⠀⠹⣿⣷⣶⣦⣼⣿⣿⣿⣿
- ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣼⣿⣿⣿⣷⣄⣸⣿⣿⣿⣿⣿⣿⣿⣿
- ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
- ⣿⣿⡿⢛⡙⢻⠛⣉⢻⣉⢈⣹⣿⣿⠟⣉⢻⡏⢛⠙⣉⢻⣿⣿⣿
- ⣿⣿⣇⠻⠃⣾⠸⠟⣸⣿⠈⣿⣿⣿⡀⠴⠞⡇⣾⡄⣿⠘⣿⣿⣿
- ⣿⣿⣟⠛⣃⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⣿⣿⣿⣿
- ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ -->
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!-- 
+⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠻⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣄⡀⠀⢻⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⣿⠃⢰⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀⢶⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⢠⡀⠐⠀⠀⠀⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⢸⣷⡄⠀⠣⣄⡀⠀⠉⠛⢿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠀⣿⣿⣦⠀⠹⣿⣷⣶⣦⣼⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣼⣿⣿⣿⣷⣄⣸⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⡿⢛⡙⢻⠛⣉⢻⣉⢈⣹⣿⣿⠟⣉⢻⡏⢛⠙⣉⢻⣿⣿⣿
+⣿⣿⣇⠻⠃⣾⠸⠟⣸⣿⠈⣿⣿⣿⡀⠴⠞⡇⣾⡄⣿⠘⣿⣿⣿
+⣿⣿⣟⠛⣃⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ -->
