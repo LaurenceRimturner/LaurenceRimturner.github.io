@@ -15,23 +15,23 @@
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⠿⠿⠿⠛⠉
 
 
-    // Table of Content
+// Table of Content
 
-    // 1. NavBarScroll Effect
-    // 2. Hover Effect
-    // 3. Theme Change
-    // 4. DarkMode
-    // 5. NameChange
-    // 6. Follow Cursor
-    // 7. LoadingScreen
-    // 8. Fade-In Effect
-    // 9. Datum
-    // 10. Letter Fade-in Effect
-    // 11. SoftSkillsSlideShow
-    // 12. Modal Zertifikat
-    // 13. Modal Arbeitsproben
-    // 14. Section Scale
-    // 14. Geheimer DevMode
+// 1. NavBarScroll Effect
+// 2. Hover Effect
+// 3. Theme Change
+// 4. DarkMode
+// 5. NameChange
+// 6. Follow Cursor
+// 7. LoadingScreen
+// 8. Fade-In Effect
+// 9. Datum
+// 10. Letter Fade-in Effect
+// 11. SoftSkillsSlideShow
+// 12. Modal Zertifikat
+// 13. Modal Arbeitsproben
+// 14. Section Scale
+// 14. Geheimer DevMode
 
 
 // NavBarScroll Effect
