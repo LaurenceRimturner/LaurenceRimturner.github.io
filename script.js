@@ -578,15 +578,18 @@ const contentObserver = new IntersectionObserver(
           fadeSection.style.position = "relative";
         }, 500);
       } else {
-        fadeSection.style.position = "sticky";
+        if (window.scrollY < contentSection.offsetTop) {
+          fadeSection.style.position = "sticky";
+        }
       }
     });
   },
   { threshold: 0.1 }
 );
 
-
 contentObserver.observe(contentSection);
+
+
 
 window.addEventListener("scroll", () => {
   if (!isSectionVisible) return;
@@ -853,8 +856,6 @@ documentationDiv.addEventListener("mouseenter", () => {
 // Section Scale
 
 document.addEventListener("DOMContentLoaded", () => {
-  const contentSection = document.querySelector(".content-section");
-
   if (!contentSection) return;
 
   const scaleObserver = new IntersectionObserver(
