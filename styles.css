@@ -56,7 +56,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* font-family: "Space Grotesk", serif; */
   font-family: "Montserrat", sans-serif;
   color: var(--main-font-color);
   user-select: none;
@@ -250,7 +249,7 @@ h5 {
   .letter-fx,
  .headerBold {
     font-size: 45px;
-    line-height: 50px;
+    line-height: 45px;
     font-weight: 600;
   }
 
@@ -963,7 +962,7 @@ body:has(.loadingScreen){
   flex-wrap: nowrap;
   min-width: fit-content;
   cursor: pointer;
-  justify-content: center;
+  justify-content: right;
 }
 
 .letterFX-tag span svg path {
@@ -1113,6 +1112,14 @@ F
     transform: translate3d(-50%, 0, 0);
   }
 }
+
+@media only screen and (max-width: 1150px) {
+  .marquee h3 {
+    line-height: 26.9px;
+    font-size: 21.7px;
+  }
+}
+
 /* Fade Section */
 
 #fade-section {
@@ -1516,6 +1523,10 @@ height: 100%;
   color: var(--main-white);
 }
 
+.work-OuterContainer .row {
+  justify-content: center;
+}
+
 .work-innerContainer,
 .work-div {
   display: flex;
@@ -1628,7 +1639,7 @@ height: 100%;
   .item6 {
     grid-column: 1 / 3;
     grid-row: 6 / 7;
-    min-height: 20vh;
+    min-height: 12.5vh;
   }
   
   .item6:hover {
@@ -1685,8 +1696,8 @@ height: 100%;
 @media (max-width: 975px) {
   .grid-container {
     grid-template-columns: 1fr;
-    padding: 0.5rem;
-    grid-row-gap: 0.8rem;
+    padding: 0;
+    grid-row-gap: 0;
   }
 
   [class*="item"] {
@@ -1719,14 +1730,17 @@ height: 100%;
     align-items: end;
   }
 
+  .item3 {
+    padding: 0;
+  }
   
   .modal-img-full img {
     width: 100vw;
   }
 
   .video-quote {
-    font-size: 35px;
-    line-height: 40.9px;
+    font-size: 25px;
+    line-height: 30px;
   }
 
   .work-innerContainer {
@@ -1748,9 +1762,9 @@ height: 100%;
   .work-innerContainer {
     gap: 10px;
     padding: 20px;
-    align-items: start;
-    margin: 0 25px;
-    width: auto;
+    align-items: center;
+    text-align: center;
+    width: 100%;
   }
 
   .work-Modal {
@@ -1823,11 +1837,6 @@ footer h4 {
   color: var(--main-white);
 }
 
-footer h4 {
-  font-size: 190px;
-  line-height: 160px;
-}
-
 .footer-nav {
   display: flex;
   flex-direction: row;
@@ -1835,22 +1844,37 @@ footer h4 {
 }
 
 .footer-c2a {
-    min-height: 50vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
 }
 
+.footer-c2a h4 {
+  font-family: "Besley", serif;
+  font-size: 110px;
+  font-weight: 100;
+  line-height: calc(110px * 1.125);
+  text-align: left;
+}
+
+
+.footer-c2a span {
+  font-family: "Montserrat", sans-serif;
+  color: var(--theme-color);
+  font-weight: 700;
+}
+
 .footer-icons {
-    display: flex;
-    justify-content: start;
-    flex-direction: column;
-    align-items: start;
-    gap: 20px;
-    border-left: 3px solid var(--main-white);
-    height: 100%;
-    padding: 0 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+  border-left: 3px solid var(--main-white);
+  height: 100%;
+  padding: 0 50px;
 }
 
 .footer-icons div {
@@ -1871,8 +1895,8 @@ footer .marquee-container {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
   padding: 5px 15px;
 }
 
@@ -1919,17 +1943,19 @@ footer .marquee-container {
 
 .meta-Footer {
   width: 100%;
-  margin-top: calc(100vh / 10);
+  margin-top: calc(100vh / 5);
 }
 
 .meta-Footer div{
   display: flex;
   justify-content: space-between;
+  gap: 10px;
 }
 
 @media screen and (max-width: 991px) {
 
   .footer-icons {
+    align-items: center;
     gap: 20px;
     border-left: none;
     padding: 35px 0;
@@ -1941,19 +1967,29 @@ footer .marquee-container {
     flex-direction: row;
     gap: 20px;
     width: 100%;
+    justify-content: center;
   }
 
-  footer h4 {
-    font-size: 50px;
-    line-height: 55px;
+  .footer-c2a h4,
+  .footer-c2a span {
+    font-size: 90px;
+    line-height: calc(90px * 1.125);
+    text-align: center;
+}
+
+  .meta-Footer div{
+    flex-direction: column;
+  }
+
+  .meta-Footer {
+    margin-top: 0;
   }
 }
 
 @media screen and (max-width: 550px) {
-  
-
-  .meta-Footer {
-    margin-top: calc(100vh / 15);
-    padding: 20px;
-  }
+  .footer-c2a h4,
+  .footer-c2a span {
+    font-size: 50px;
+    line-height: calc(50px * 1.125);
+}
 }
