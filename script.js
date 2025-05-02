@@ -32,6 +32,7 @@
 // 13. Modal Arbeitsproben
 // 14. Section Scale
 // 15. Geheimer DevMode
+// 16. Footer
 
 
 // NavBarScroll Effect
@@ -565,7 +566,6 @@ const observer = new IntersectionObserver(
 observer.observe(fadeContainer);
 
 let isContentVisible = false;
-
 const contentObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -978,3 +978,29 @@ document.addEventListener("DOMContentLoaded", () => {
     let game = setInterval(draw, 100);
   }
 });
+
+
+//Footer
+
+const footerSection = document.querySelector("footer .section");
+let fadeInTimeout;
+
+function checkIfAtPageEnd() {
+  const pageHeight = footerSection.offsetTop + footerSection.offsetHeight;
+  const scrollPosition = window.scrollY + window.innerHeight;
+
+  if (scrollPosition + 150 >= pageHeight) {
+    clearTimeout(fadeInTimeout);
+    footerSection.classList.add("PageEnd");
+
+  } else {
+    clearTimeout(fadeInTimeout);
+    footerSection.classList.remove("PageEnd");
+  }
+}
+
+document.addEventListener("scroll", checkIfAtPageEnd);
+window.addEventListener("resize", checkIfAtPageEnd);
+checkIfAtPageEnd();
+
+
