@@ -1363,7 +1363,13 @@ F .hero-section h1,
   position: relative;
   transform: scale(1) !important;
   cursor: grab;
-  --mask-gradient: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  --mask-gradient: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
   mask-image: var(--mask-gradient);
   mask-size: 100% 100%;
   mask-repeat: no-repeat;
@@ -1513,7 +1519,7 @@ F .hero-section h1,
   padding: 30px;
   border-bottom: 2px solid var(--main-font-color);
   align-items: center;
-  margin: 0 25px; 
+  margin: 0 25px;
 }
 
 .work-div {
