@@ -14,7 +14,6 @@
 // ⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⠿⠿⠿⠛⠉
 
-
 // Table of Content
 
 // 1. NavBarScroll Effect
@@ -34,11 +33,10 @@
 // 15. Geheimer DevMode
 // 16. Footer
 
-
 // NavBarScroll Effect
 window.addEventListener("scroll", function () {
   let header = document.querySelector(".nav-bar");
-  header.classList.toggle("is_sticky", window.scrollY > 20); 
+  header.classList.toggle("is_sticky", window.scrollY > 20);
 });
 
 // Hover Effect
@@ -78,7 +76,7 @@ const themes = [
   <span class="svg-box" onclick="themeChange()">
     <svg xmlns="http://www.w3.org/2000/svg"   stroke-width="5px" width="75" height="75" viewBox="0 0 64 64"><path stroke-width="5px" stroke="var(--main-white)" fill="var(--theme-color)" d="M15 51.3c-.6 0-1.2-.2-1.6-.7c-.9-.9-.9-2.3 0-3.2l30.3-30.3H19.5c-1.2 0-2.2-1-2.2-2.2s1-2.2 2.2-2.2H49c1.2 0 2.2 1 2.2 2.2v29.7c0 1.2-1 2.2-2.2 2.2s-2.2-1-2.2-2.2V20.5L16.6 50.7c-.4.4-1 .6-1.6.6"/></svg>
   </span>
-    </div>`
+    </div>`,
   },
   {
     color: "#e49f04",
@@ -97,7 +95,7 @@ const themes = [
     <span class="svg-box" onclick="themeChange()">
       <svg xmlns="http://www.w3.org/2000/svg"   stroke-width="5px" width="75" height="75" viewBox="0 0 64 64"><path stroke-width="5px" stroke="var(--main-white)" fill="var(--theme-color)" d="M15 51.3c-.6 0-1.2-.2-1.6-.7c-.9-.9-.9-2.3 0-3.2l30.3-30.3H19.5c-1.2 0-2.2-1-2.2-2.2s1-2.2 2.2-2.2H49c1.2 0 2.2 1 2.2 2.2v29.7c0 1.2-1 2.2-2.2 2.2s-2.2-1-2.2-2.2V20.5L16.6 50.7c-.4.4-1 .6-1.6.6"/></svg>
     </span>
-    </div>`
+    </div>`,
   },
   {
     color: "#934fff",
@@ -116,7 +114,7 @@ const themes = [
   <span class="svg-box" onclick="themeChange()">
     <svg xmlns="http://www.w3.org/2000/svg"   stroke-width="5px" width="75" height="75" viewBox="0 0 64 64"><path stroke-width="5px" stroke="var(--main-white)" fill="var(--theme-color)" d="M15 51.3c-.6 0-1.2-.2-1.6-.7c-.9-.9-.9-2.3 0-3.2l30.3-30.3H19.5c-1.2 0-2.2-1-2.2-2.2s1-2.2 2.2-2.2H49c1.2 0 2.2 1 2.2 2.2v29.7c0 1.2-1 2.2-2.2 2.2s-2.2-1-2.2-2.2V20.5L16.6 50.7c-.4.4-1 .6-1.6.6"/></svg>
   </span>
-    </div>`
+    </div>`,
   },
 ];
 
@@ -129,8 +127,6 @@ function themeChange() {
   const { color, head } = themes[++currentTheme % themes.length];
   themeHeader.innerHTML = head;
   document.documentElement.style.setProperty("--theme-color", color);
-
-
 
   const iconColors = document.querySelectorAll(".icon-box img");
 
@@ -255,7 +251,9 @@ window.addEventListener("load", () => {
   const countUpNum = document.querySelector(".countUp");
   const loadingMessages = document.getElementById("toDoElements");
   const LoadingscreenCursor = document.querySelector(".LoadingscreenCursor");
-  const innerLoadingScreenDiv = document.querySelector(".innerLoadingScreenDiv")
+  const innerLoadingScreenDiv = document.querySelector(
+    ".innerLoadingScreenDiv"
+  );
   let funnyQuotes = [
     "Es werden noch schnell die Divs zentriert...",
     "Es werden noch schnell die Farben gemischt...",
@@ -287,7 +285,7 @@ window.addEventListener("load", () => {
     "Es wird noch schnell die Katze gefüttert...",
     "Es wird noch schnell 'ne Pause gemacht...",
     "Es wird noch schnell ??????",
-    "Es wird noch schnell [Hier Tätigkeit einfügen...]"
+    "Es wird noch schnell [Hier Tätigkeit einfügen...]",
   ];
 
   const max = funnyQuotes.length;
@@ -297,7 +295,6 @@ window.addEventListener("load", () => {
     loadingMessages.textContent = funnyQuotes[randomIndex];
   }
   setInterval(() => randomQuoteLoading(funnyQuotes), 1200); // Quotes wechsel
-
 
   const cursorImgs = [
     "./assets/Images/LoadingImg/CSD-PotsdamerPlatz.jpg",
@@ -311,14 +308,14 @@ window.addEventListener("load", () => {
     "./assets/Images/LoadingImg/Luebeck-Muster.jpg",
     "./assets/Images/LoadingImg/Luebeck-Reflektion-Vase.jpg",
     "./assets/Images/LoadingImg/Luebeck-Parkhaus.jpg",
-    "./assets/Images/LoadingImg/Luebeck-Gebaeude.jpg"
+    "./assets/Images/LoadingImg/Luebeck-Gebaeude.jpg",
   ];
-  
+
   const columns = 4;
   const rows = 3;
   const imgWidth = 400;
   const imgHeight = 400;
-  
+
   const container = document.querySelector(".LoadingscreenCursor");
 
   cursorImgs.forEach((src) => {
@@ -327,49 +324,48 @@ window.addEventListener("load", () => {
     img.loading = "eager";
     container.appendChild(img);
   });
-  
+
   const maxColIndex = columns - 1;
   const maxRowIndex = rows - 1;
-  
+
   const mouseArea = document.getElementById("MouseEventElement");
-  
+
   document.addEventListener("mousemove", (e) => {
     const { innerWidth: w, innerHeight: h } = window;
-  
+
     const col = Math.floor((e.clientX / w) * columns);
     const row = Math.floor((e.clientY / h) * rows);
-  
+
     const offsetX = col * -imgWidth;
     const offsetY = row * -imgHeight;
-  
+
     container.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-  
+
     mouseArea.style.left = `${e.clientX}px`;
     mouseArea.style.top = `${e.clientY}px`;
   });
-  
 
   let startTime = performance.now();
   let duration = 10; // 5000
 
   function easeInOutCubic(t) {
     return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-}
-  
+  }
+
   function countUp(timestamp) {
     let elapsed = timestamp - startTime;
     let progress = Math.min(elapsed / duration, 1);
     let easedProgress = easeInOutCubic(progress);
     let percent = Math.floor(easedProgress * 100);
     countUpNum.innerHTML = `[${percent}/100]`;
-  
+
     if (percent === 100) {
       setTimeout(() => {
         innerLoadingScreenDiv.classList.add("active");
         enableClickEvent();
       }, 500);
-    } 
-  
+    }
+
     if (progress < 1) {
       requestAnimationFrame(countUp);
     } else {
@@ -378,29 +374,29 @@ window.addEventListener("load", () => {
       }, 1000);
     }
   }
-  
+
   function enableClickEvent() {
     loadingScreen.addEventListener("click", () => {
-          MouseEventElement.style.width = "20px"
-          MouseEventElement.style.height = "20px"
-          MouseEventElement.style.borderRadius = "50px"          
+      MouseEventElement.style.width = "20px";
+      MouseEventElement.style.height = "20px";
+      MouseEventElement.style.borderRadius = "50px";
       if (loadingScreen.parentNode) {
-        const hiddenLoadingScreen = document.querySelector(".loadingScreen-hidden");
+        const hiddenLoadingScreen = document.querySelector(
+          ".loadingScreen-hidden"
+        );
         if (hiddenLoadingScreen) {
-          hiddenLoadingScreen.style.top = "-120vh"
+          hiddenLoadingScreen.style.top = "-120vh";
         }
         MouseEventElement.removeChild(LoadingscreenCursor);
         setTimeout(() => {
-        loadingScreen.parentNode.removeChild(loadingScreen);
-        fadeInElements();
-      }, 1000)
+          loadingScreen.parentNode.removeChild(loadingScreen);
+          fadeInElements();
+        }, 1000);
       }
     });
-
   }
-  
+
   requestAnimationFrame(countUp);
-  
 
   //Fade-In Effect
 
@@ -532,7 +528,6 @@ function setTransition() {
   }, tiltEffectSettings.speed);
 }
 
-
 // Letter Fade-in Effect
 
 const fadeContainer = document.querySelector(".fade-container");
@@ -544,7 +539,7 @@ const contentSection = document.querySelector(".content-section");
 let isSectionVisible = false;
 
 const startOffset = 0; // Startet 10% vor der Mitte (kleiner = früher)
-const endOffset = .5; // Endet 50% nach der Mitte (größer = später)
+const endOffset = 0.5; // Endet 50% nach der Mitte (größer = später)
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -559,8 +554,7 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0
-   }
+  { threshold: 0 }
 );
 
 observer.observe(fadeContainer);
@@ -588,8 +582,6 @@ const contentObserver = new IntersectionObserver(
 );
 
 contentObserver.observe(contentSection);
-
-
 
 window.addEventListener("scroll", () => {
   if (!isSectionVisible) return;
@@ -656,8 +648,7 @@ const slideObserver = new IntersectionObserver(
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("show");
-      } 
-      else {
+      } else {
         entry.target.classList.remove("show");
       }
     });
@@ -681,7 +672,9 @@ slideShowSection.addEventListener("mouseleave", () => {
 
 function startDrag(e) {
   pressed = true;
-  startX = (e.touches ? e.touches[0].clientX : e.clientX) - slideShowContainer.offsetLeft;
+  startX =
+    (e.touches ? e.touches[0].clientX : e.clientX) -
+    slideShowContainer.offsetLeft;
 }
 
 function endDrag() {
@@ -698,12 +691,10 @@ function moveDrag(e) {
   checkBoundary();
 }
 
-// Events für Maus
 slideShowSection.addEventListener("mousedown", startDrag);
 window.addEventListener("mouseup", endDrag);
 slideShowSection.addEventListener("mousemove", moveDrag);
 
-// Events für Touch
 slideShowSection.addEventListener("touchstart", startDrag);
 window.addEventListener("touchend", endDrag);
 slideShowSection.addEventListener("touchmove", moveDrag);
@@ -715,26 +706,28 @@ function checkBoundary() {
 
   let currentLeft = parseInt(getComputedStyle(slideShowContainer).left, 10) || 0;
 
+  const maxLeft = -(innerRect.width - outerRect.width);
+
   if (currentLeft >= 0) {
     slideShowContainer.style.left = "0px";
-    slideShowSection.style.setProperty("--before-bg", "transparent");
-  } else {
     slideShowSection.style.setProperty(
-      "--before-bg",
-      "linear-gradient(90deg, var(--main-font-color), transparent)"
+      "--mask-gradient",
+      "linear-gradient(to right, black 0%, black 90%, transparent)"
     );
-  }
-
-  if (currentLeft <= -(innerRect.width - outerRect.width)) {
-    slideShowContainer.style.left = `-${innerRect.width - outerRect.width}px`;
-    slideShowSection.style.setProperty("--after-bg", "transparent");
+  } else if (currentLeft <= maxLeft) {
+    slideShowContainer.style.left = `${maxLeft}px`;
+    slideShowSection.style.setProperty(
+      "--mask-gradient",
+      "linear-gradient(to right, transparent, black 10%, black 100%)"
+    );
   } else {
     slideShowSection.style.setProperty(
-      "--after-bg",
-      "linear-gradient(90deg, transparent, var(--main-font-color))"
+      "--mask-gradient",
+      "linear-gradient(to right, transparent, black 10%, black 90%, transparent)"
     );
   }
 }
+
 
 checkBoundary();
 
@@ -760,7 +753,7 @@ itemContainer.addEventListener("mouseenter", () => {
 
 itemContainer.addEventListener("mouseleave", () => {
   const modalImgLoad = document.querySelector(".modal-img");
-  
+
   if (modalImgLoad) {
     modalImgLoad.classList.remove("preview");
 
@@ -851,8 +844,6 @@ documentationDiv.addEventListener("mouseenter", () => {
   }
 });
 
-
-
 // Section Scale
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -860,7 +851,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const scaleObserver = new IntersectionObserver(
     ([entry]) => {
-      const scaleValue = Math.min(1, 0.75 + entry.intersectionRatio * .85);
+      const scaleValue = Math.min(1, 0.75 + entry.intersectionRatio * 0.85);
       contentSection.style.transform = `scale3d(${scaleValue}, ${scaleValue}, ${scaleValue})`;
     },
     { threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] }
@@ -873,9 +864,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const konamiCode = [
-    "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown",
-    "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight",
-    "b", "a"
+    "ArrowUp",
+    "ArrowUp",
+    "ArrowDown",
+    "ArrowDown",
+    "ArrowLeft",
+    "ArrowRight",
+    "ArrowLeft",
+    "ArrowRight",
+    "b",
+    "a",
   ];
   let inputBuffer = [];
 
@@ -919,10 +917,14 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("keydown", changeDirection);
 
     function changeDirection(event) {
-      if (event.key === "ArrowLeft" && direction !== "RIGHT") direction = "LEFT";
-      else if (event.key === "ArrowUp" && direction !== "DOWN") direction = "UP";
-      else if (event.key === "ArrowRight" && direction !== "LEFT") direction = "RIGHT";
-      else if (event.key === "ArrowDown" && direction !== "UP") direction = "DOWN";
+      if (event.key === "ArrowLeft" && direction !== "RIGHT")
+        direction = "LEFT";
+      else if (event.key === "ArrowUp" && direction !== "DOWN")
+        direction = "UP";
+      else if (event.key === "ArrowRight" && direction !== "LEFT")
+        direction = "RIGHT";
+      else if (event.key === "ArrowDown" && direction !== "UP")
+        direction = "DOWN";
     }
 
     function draw() {
@@ -946,8 +948,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (direction === "DOWN") headY += box;
 
       if (
-        headX < 0 || headX >= canvas.width ||
-        headY < 0 || headY >= canvas.height ||
+        headX < 0 ||
+        headX >= canvas.width ||
+        headY < 0 ||
+        headY >= canvas.height ||
         collision({ x: headX, y: headY }, snake)
       ) {
         clearInterval(game);
@@ -972,13 +976,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function collision(head, arr) {
-      return arr.some(segment => segment.x === head.x && segment.y === head.y);
+      return arr.some(
+        (segment) => segment.x === head.x && segment.y === head.y
+      );
     }
 
     let game = setInterval(draw, 100);
   }
 });
-
 
 //Footer
 
@@ -992,7 +997,6 @@ function checkIfAtPageEnd() {
   if (scrollPosition + 150 >= pageHeight) {
     clearTimeout(fadeInTimeout);
     footerSection.classList.add("PageEnd");
-
   } else {
     clearTimeout(fadeInTimeout);
     footerSection.classList.remove("PageEnd");
@@ -1002,5 +1006,3 @@ function checkIfAtPageEnd() {
 document.addEventListener("scroll", checkIfAtPageEnd);
 window.addEventListener("resize", checkIfAtPageEnd);
 checkIfAtPageEnd();
-
-
