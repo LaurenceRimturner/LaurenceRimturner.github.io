@@ -704,7 +704,8 @@ function checkBoundary() {
   const outerRect = slideShowSection.getBoundingClientRect();
   const innerRect = slideShowContainer.getBoundingClientRect();
 
-  let currentLeft = parseInt(getComputedStyle(slideShowContainer).left, 10) || 0;
+  let currentLeft =
+    parseInt(getComputedStyle(slideShowContainer).left, 10) || 0;
 
   const maxLeft = -(innerRect.width - outerRect.width);
 
@@ -727,7 +728,6 @@ function checkBoundary() {
     );
   }
 }
-
 
 checkBoundary();
 
