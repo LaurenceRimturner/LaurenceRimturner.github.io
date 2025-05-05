@@ -1037,7 +1037,7 @@ F .hero-section h1,
 }
 
 .HeroContainer .heroImgBox {
-  background-image: url(./assets/Images/ProfilePicture_Test.jpg);
+  background-image: url(./assets/Images/ProfilePicture.jpg);
   background-size: cover;
   background-position: 20%;
   position: absolute;
