@@ -61,11 +61,11 @@
   user-select: none;
   -webkit-user-drag: none;
   transition: background-color 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
-    color 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
-    fill 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
-    border 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
-    transform 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
-    stroke 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76);
+    color 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76),
+    fill 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76),
+    border 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76),
+    transform 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76),
+    stroke 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76);
 }
 
 html {
@@ -594,9 +594,9 @@ h5 {
 
 .fade {
   opacity: 0;
-  transition: transform 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
-    opacity 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
-    height 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
+  transition: transform 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76),
+    opacity 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76),
+    height 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76),
     color 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76),
     font-weight 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76);
   will-change: transform, opacity;
@@ -605,9 +605,9 @@ h5 {
 .fade.visible {
   opacity: 1;
   transform: translateY(0) rotate(0);
-  transition: transform 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
-    opacity 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
-    height 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
+  transition: transform 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76),
+    opacity 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76),
+    height 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76),
     font-weight 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76),
     color 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76),
     background-color 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76);
@@ -987,8 +987,8 @@ body:has(.loadingScreen) {
   justify-content: center;
   background-color: var(--main-white);
   border-radius: 50px;
-  height: 100px;
-  width: 100px;
+  height: 70px;
+  width: 70px;
   margin-left: 30px;
   transform: scale(1);
 }
