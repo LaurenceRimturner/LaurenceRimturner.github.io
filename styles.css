@@ -64,7 +64,8 @@
     color 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
     fill 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
     border 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
-    transform 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76);
+    transform 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
+    stroke 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76);
 }
 
 html {
@@ -960,11 +961,11 @@ body:has(.loadingScreen) {
   min-width: fit-content;
   cursor: pointer;
   justify-content: right;
+  align-items: center;
 }
 
 .letterFX-tag span svg path {
-  transition: stroke 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76);
-  stroke: var(--main-white);
+  stroke: var(--theme-color);
 }
 
 .letter-fx,
@@ -980,13 +981,20 @@ body:has(.loadingScreen) {
   width: fit-content;
 }
 
-.svg-box {
+.letterFX-tag .svg-box {
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: invert(1);
-  width: 75px;
-  height: 75px;
+  background-color: var(--main-white);
+  border-radius: 50px;
+  height: 100px;
+  width: 100px;
+  margin-left: 30px;
+  transform: scale(1);
+}
+
+.letterFX-tag .svg-box:hover {
+  transform: scale(1.1);
 }
 
 .themeChangeBtn {
@@ -1021,12 +1029,14 @@ body:has(.loadingScreen) {
   min-height: 100vh;
   margin: 0;
 }
+
 .hero-section img {
   width: auto;
   height: 100%;
   max-width: 100%;
 }
-F .hero-section h1,
+
+.hero-section h1,
 .hero-section p {
   color: var(--main-white);
 }
@@ -1052,6 +1062,11 @@ F .hero-section h1,
 }
 
 @media only screen and (max-width: 786px) {
+
+  .letterFX-tag .svg-box {
+    height: 60px;
+    width: 60px;
+  }
 
   .svg-box svg {
     width: 50px;
@@ -1144,12 +1159,6 @@ F .hero-section h1,
   flex-direction: row;
 }
 
-.letterFX-tag .svg-box {
-  z-index: 1;
-  backdrop-filter: invert(0);
-  width: auto;
-  height: auto;
-}
 
 .emphasizeLetters span {
   color: var(--theme-color) !important;
