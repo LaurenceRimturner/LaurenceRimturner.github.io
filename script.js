@@ -32,6 +32,7 @@
 // 14. Section Scale
 // 15. Geheimer DevMode
 // 16. Footer
+// 17. Page Transition
 
 // NavBarScroll Effect
 window.addEventListener("scroll", function () {
@@ -1006,3 +1007,17 @@ function checkIfAtPageEnd() {
 document.addEventListener("scroll", checkIfAtPageEnd);
 window.addEventListener("resize", checkIfAtPageEnd);
 checkIfAtPageEnd();
+
+
+// Page Transition
+
+window.addEventListener("load", () => {
+  const overlay = document.getElementById("black-overlay");
+  setTimeout(() => {
+    overlay.classList.add("fade-out");
+  }, 175)
+
+  overlay.addEventListener("transitionend", () => {
+    overlay.remove();
+  });
+});
