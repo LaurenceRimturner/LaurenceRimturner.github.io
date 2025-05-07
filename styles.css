@@ -1036,7 +1036,8 @@ body:has(.loadingScreen) {
   align-items: center;
   flex-direction: column;
   position: relative;
-  background-color: var(--theme-color);
+/*   background-color: var(--theme-color); */
+  background: linear-gradient(0deg, var(--theme-color) 30%, transparent 120%);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
