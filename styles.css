@@ -30,12 +30,13 @@
     1. SUPPORT CLASSES
     2. JavaScript Class
     3. LoadingScreen
-    4. Navbar
-    5. Hero Section 
-    6. Marquee
-    7. Fade-Section
-    8. Content-Boxes
-    9. Footer
+    4. LoadingScreen
+    5. Navbar
+    6. Hero Section 
+    7. Marquee
+    8. Fade-Section
+    9. Content-Boxes
+    10. Footer
 */
 
 /*SUPPORT CLASSES*/
@@ -61,11 +62,11 @@
   user-select: none;
   -webkit-user-drag: none;
   transition: background-color 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
-    color 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76),
-    fill 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76),
-    border 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76),
-    transform 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76),
-    stroke 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76);
+    color 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
+    fill 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
+    border 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
+    transform 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
+    stroke 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76);
 }
 
 html {
@@ -594,23 +595,24 @@ h5 {
 
 .fade {
   opacity: 0;
-  transition: transform 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76),
-    opacity 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76),
-    height 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76),
-    color 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76),
-    font-weight 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76);
+  transition: transform 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
+    opacity 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
+    height 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
+    color 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
+    font-weight 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
+    background-color 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76);
   will-change: transform, opacity;
 }
 
 .fade.visible {
   opacity: 1;
   transform: translateY(0) rotate(0);
-  transition: transform 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76),
-    opacity 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76),
-    height 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76),
-    font-weight 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76),
-    color 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76),
-    background-color 0.25s cubic-bezier(0.32, 0.76, 0.32, 0.76);
+  transition: transform 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
+    opacity 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
+    height 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
+    font-weight 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
+    color 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
+    background-color 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76);
 }
 
 .fade-from-bottom {
@@ -628,6 +630,24 @@ h5 {
 
 .rotate-from-bottom {
   transform: translateY(50px) rotate(2deg);
+}
+
+/* Page Fade */
+
+#black-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--main-white);
+  opacity: 1;
+  transition: opacity 1s ease;
+  z-index: 10000;
+  pointer-events: none;
+}
+#black-overlay.fade-out {
+  opacity: 0;
 }
 
 /* LoadingScreen */
@@ -1245,10 +1265,10 @@ body:has(.loadingScreen) {
 }
 
 .item1 {
-  background-color: #2c55d8;
+  background-color: var(--theme-color);
   grid-column: 1 / 3;
   grid-row: 1 / 3;
-  background-image: url(./assets/Images/Progress.jpg);
+  background-image: url(./assets/Images/Progress.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -1288,7 +1308,7 @@ body:has(.loadingScreen) {
 }
 
 .item2 {
-  background-color: var(--main-font-color);
+  border: var(--theme-color) 5px solid;
   grid-column: 4 / 4;
   grid-row: 1 / 3;
   justify-content: end;
@@ -1346,11 +1366,11 @@ body:has(.loadingScreen) {
 
 .item2 h3,
 .item2 svg {
-  color: var(--main-white);
+  color: var(--theme-color);
 }
 
 .item2 svg path {
-  fill: var(--main-white);
+  fill: var(--theme-color);
 }
 
 .item3 {
@@ -1983,19 +2003,3 @@ footer .marquee-container {
   }
 }
 
-
-#black-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--main-white);
-  opacity: 1;
-  transition: opacity 1s ease;
-  z-index: 10000;
-  pointer-events: none;
-}
-#black-overlay.fade-out {
-  opacity: 0;
-}
