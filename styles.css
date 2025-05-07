@@ -238,11 +238,6 @@ h5 {
     font-size: 70.4px;
     line-height: 78.64px;
   }
-
-  .letterFX-tag .svg-box svg {
-    width: 40px;
-    height: 40px;
-  }
 }
 
 @media screen and (max-width: 576px) {
@@ -1009,7 +1004,7 @@ body:has(.loadingScreen) {
   border-radius: 50px;
   height: 70px;
   width: 70px;
-  margin-left: 30px;
+  margin-left: 15px;
   transform: scale(1);
 }
 
@@ -1081,16 +1076,34 @@ body:has(.loadingScreen) {
   padding-top: 15px;
 }
 
-@media only screen and (max-width: 786px) {
+@media only screen and (max-width: 1150px) {
+  .header-content {
+    margin-top: -125px;
+  }
 
   .letterFX-tag .svg-box {
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
   }
 
   .svg-box svg {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+
+@media only screen and (max-width: 786px) {
+
+  .letterFX-tag .svg-box {
+    width: 35px;
+    height: 35px;
+    margin-left: 5px;
+  }
+
+  .svg-box svg {
+    width: 25px;
+    height: 25px;
   }
 
   .letterFX-tag {
@@ -1098,11 +1111,6 @@ body:has(.loadingScreen) {
   }
 }
 
-@media only screen and (max-width: 1150px) {
-  .header-content {
-    margin-top: -125px;
-  }
-}
 
 /* Marquee */
 
