@@ -1095,9 +1095,6 @@ body:has(.loadingScreen) {
 
 
 @media only screen and (max-width: 786px) {
-  .header-content {
-    margin-top: 0px;
-  }
     
   .letterFX-tag .svg-box {
     width: 35px;
@@ -1113,6 +1110,13 @@ body:has(.loadingScreen) {
   .letterFX-tag {
     flex-wrap: wrap;
   }
+}
+
+@media only screen and (max-width: 576px) {
+  .header-content {
+    margin-top: 0px;
+  }
+
 }
 
 
