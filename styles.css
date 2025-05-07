@@ -1220,8 +1220,8 @@ body:has(.loadingScreen) {
 
 @media only screen and (max-width: 975px) {
   .fade-letter-tag span {
-    font-size: 60px;
-    line-height: 75px;
+    font-size: 30px;
+    line-height: 40px;
   }
 }
 
