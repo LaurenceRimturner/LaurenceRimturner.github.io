@@ -322,7 +322,7 @@ window.addEventListener("load", () => {
   cursorImgs.forEach((src) => {
     const img = document.createElement("img");
     img.src = src;
-    img.loading = "lazy";
+    img.loading = "eager";
     container.appendChild(img);
   });
 
