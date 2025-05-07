@@ -75,7 +75,7 @@ const themes = [
     <span class="letter-fx">ä</span>
     <span class="letter-fx">t</span>
   <span class="svg-box" onclick="themeChange()">
-    <svg xmlns="http://www.w3.org/2000/svg"   stroke-width="5px" width="75" height="75" viewBox="0 0 64 64"><path stroke-width="5px" stroke="var(--main-white)" fill="var(--theme-color)" d="M15 51.3c-.6 0-1.2-.2-1.6-.7c-.9-.9-.9-2.3 0-3.2l30.3-30.3H19.5c-1.2 0-2.2-1-2.2-2.2s1-2.2 2.2-2.2H49c1.2 0 2.2 1 2.2 2.2v29.7c0 1.2-1 2.2-2.2 2.2s-2.2-1-2.2-2.2V20.5L16.6 50.7c-.4.4-1 .6-1.6.6"/></svg>
+    <svg  xmlns="http://www.w3.org/2000/svg"   stroke-width="5px" width="50" height="50" viewBox="0 0 64 64"><path stroke-width="5px" stroke="var(--theme-color)" fill="var(--theme-color)" d="M15 51.3c-.6 0-1.2-.2-1.6-.7c-.9-.9-.9-2.3 0-3.2l30.3-30.3H19.5c-1.2 0-2.2-1-2.2-2.2s1-2.2 2.2-2.2H49c1.2 0 2.2 1 2.2 2.2v29.7c0 1.2-1 2.2-2.2 2.2s-2.2-1-2.2-2.2V20.5L16.6 50.7c-.4.4-1 .6-1.6.6"/></svg>
   </span>
     </div>`,
   },
@@ -94,7 +94,7 @@ const themes = [
     <span class="letter-fx">n</span>
     <span class="letter-fx">g</span>
     <span class="svg-box" onclick="themeChange()">
-      <svg xmlns="http://www.w3.org/2000/svg"   stroke-width="5px" width="75" height="75" viewBox="0 0 64 64"><path stroke-width="5px" stroke="var(--main-white)" fill="var(--theme-color)" d="M15 51.3c-.6 0-1.2-.2-1.6-.7c-.9-.9-.9-2.3 0-3.2l30.3-30.3H19.5c-1.2 0-2.2-1-2.2-2.2s1-2.2 2.2-2.2H49c1.2 0 2.2 1 2.2 2.2v29.7c0 1.2-1 2.2-2.2 2.2s-2.2-1-2.2-2.2V20.5L16.6 50.7c-.4.4-1 .6-1.6.6"/></svg>
+      <svg  xmlns="http://www.w3.org/2000/svg"   stroke-width="5px" width="50" height="50" viewBox="0 0 64 64"><path stroke-width="5px" stroke="var(--theme-color)" fill="var(--theme-color)" d="M15 51.3c-.6 0-1.2-.2-1.6-.7c-.9-.9-.9-2.3 0-3.2l30.3-30.3H19.5c-1.2 0-2.2-1-2.2-2.2s1-2.2 2.2-2.2H49c1.2 0 2.2 1 2.2 2.2v29.7c0 1.2-1 2.2-2.2 2.2s-2.2-1-2.2-2.2V20.5L16.6 50.7c-.4.4-1 .6-1.6.6"/></svg>
     </span>
     </div>`,
   },
@@ -113,7 +113,7 @@ const themes = [
     <span class="letter-fx">g</span>
     <span class="letter-fx">n</span>
   <span class="svg-box" onclick="themeChange()">
-    <svg xmlns="http://www.w3.org/2000/svg"   stroke-width="5px" width="75" height="75" viewBox="0 0 64 64"><path stroke-width="5px" stroke="var(--main-white)" fill="var(--theme-color)" d="M15 51.3c-.6 0-1.2-.2-1.6-.7c-.9-.9-.9-2.3 0-3.2l30.3-30.3H19.5c-1.2 0-2.2-1-2.2-2.2s1-2.2 2.2-2.2H49c1.2 0 2.2 1 2.2 2.2v29.7c0 1.2-1 2.2-2.2 2.2s-2.2-1-2.2-2.2V20.5L16.6 50.7c-.4.4-1 .6-1.6.6"/></svg>
+    <svg  xmlns="http://www.w3.org/2000/svg"   stroke-width="5px" width="50" height="50" viewBox="0 0 64 64"><path stroke-width="5px" stroke="var(--theme-color)" fill="var(--theme-color)" d="M15 51.3c-.6 0-1.2-.2-1.6-.7c-.9-.9-.9-2.3 0-3.2l30.3-30.3H19.5c-1.2 0-2.2-1-2.2-2.2s1-2.2 2.2-2.2H49c1.2 0 2.2 1 2.2 2.2v29.7c0 1.2-1 2.2-2.2 2.2s-2.2-1-2.2-2.2V20.5L16.6 50.7c-.4.4-1 .6-1.6.6"/></svg>
   </span>
     </div>`,
   },
