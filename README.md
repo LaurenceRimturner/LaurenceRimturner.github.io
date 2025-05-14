@@ -15,7 +15,7 @@ Ich bin leidenschaftlicher Mediengestalter mit einem starken Gespür für Ästhe
 
 - Kreatives Denken mit technischem Know-how
 - Fokus auf UI/UX & responsive Webdesign
-- Sauberer, performanter Code (HTML, CSS, JavaScript, React)
+- Sauberer, performanter Code (HTML, CSS, JavaScript, Vue)
 - Erfahrung mit Adobe Creative Suite, Figma & Co.
 
 
