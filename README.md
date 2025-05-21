@@ -1,5 +1,5 @@
 
-# ✌🏼✌🏼 Hey, ich bin Laurin
+# HeJ Hej, ich bin Laurin
 
 **Mediengestalter · Creative Mind · Junior Frontend Developer**
 
