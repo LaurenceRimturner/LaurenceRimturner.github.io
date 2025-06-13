@@ -99,7 +99,7 @@ const themes = [
     </div>`,
   },
   {
-    color: "#ff6f4f",
+    color: "#e05638",
     head: `<div onclick="themeChange()" class="letterFX-tag">
     <span class="letter-fx">M</span>
     <span class="letter-fx">e</span>
