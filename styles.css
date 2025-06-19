@@ -94,9 +94,11 @@ body {
 
 body:has(.loadingScreen) #MouseEventElement {
   border-radius: 0;
-  height: 400px;
-  width: 400px;
+  height: 0px;
+  width: 0px;
   overflow: hidden;
+  transition: width .5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
+  height .5s cubic-bezier(0.32, 0.76, 0.32, 0.76);
 }
 
 .LoadingscreenCursor {
@@ -152,7 +154,7 @@ h1,
 .letter-fx,
 .headerBold {
   font-size: 150px;
-  line-height: 135px;
+  line-height: calc(130px * 1.125);
   color: var(--main-white);
   font-style: italic;
   font-weight: 300;
@@ -661,8 +663,9 @@ body:has(.loadingScreen) {
   background-color: var(--main-font-color);
   transition: opacity 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
     visibility 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
-    transform 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
-    top 1s cubic-bezier(0.32, -0.1, 0.32, 0.76);
+    transform 1.5s cubic-bezier(0.32, 0.76, 0.32, 0.76),
+    top 1s cubic-bezier(0.32, -0.1, 0.32, 0.76),
+    background-color 0.5s cubic-bezier(0.32, 0.76, 0.32, 0.76);;
   display: flex;
   flex-direction: row;
   gap: 80px;
@@ -676,7 +679,7 @@ body:has(.loadingScreen) {
 }
 
 .loadingScreen-hidden {
-  transform: scale(0.975);
+  transform: scale(0.95);
 }
 
 .loadingScreen .loadingScreenDiv {
@@ -1882,7 +1885,7 @@ footer h4 {
 
 .footer-c2a h4 {
   font-family: "Besley", serif;
-  font-size: 145px;
+  font-size: 150px;
   font-weight: 100;
   line-height: calc(130px * 1.125);
   text-align: left;
