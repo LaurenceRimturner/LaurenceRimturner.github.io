@@ -112,6 +112,7 @@ body:has(.loadingScreen) .LoadingscreenCursor img {
   height: 400px;
   object-fit: cover;
   pointer-events: none;
+  background-color: var(--theme-color);
 }
 
 @media only screen and (max-width: 1024px) {
