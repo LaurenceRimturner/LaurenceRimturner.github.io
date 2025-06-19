@@ -329,8 +329,7 @@ window.addEventListener("load", () => {
   const maxColIndex = columns - 1;
   const maxRowIndex = rows - 1;
 
-  const mouseArea = document.getElementById("MouseEventElement");
-
+  
   document.addEventListener("mousemove", (e) => {
     const { innerWidth: w, innerHeight: h } = window;
 
@@ -342,8 +341,8 @@ window.addEventListener("load", () => {
 
     container.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
 
-    mouseArea.style.left = `${e.clientX}px`;
-    mouseArea.style.top = `${e.clientY}px`;
+    MouseEventElement.style.left = `${e.clientX}px`;
+    MouseEventElement.style.top = `${e.clientY}px`;
   });
 
   let startTime = performance.now();
@@ -386,7 +385,9 @@ window.addEventListener("load", () => {
           ".loadingScreen-hidden"
         );
         if (hiddenLoadingScreen) {
-          hiddenLoadingScreen.style.top = "-120vh";
+          // hiddenLoadingScreen.style.top = "-120vh";
+        hiddenLoadingScreen.style.transform = "scale(2)";
+        hiddenLoadingScreen.style.backgroundColor = "#2c55d8";
         }
         MouseEventElement.removeChild(LoadingscreenCursor);
         setTimeout(() => {
@@ -1016,6 +1017,12 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     overlay.classList.add("fade-out");
   }, 175)
+
+    setTimeout(() => {
+    overlay.classList.add("fade-out");
+          MouseEventElement.style.width = "400px";
+      MouseEventElement.style.height = "400px";
+  }, 1000)
 
   overlay.addEventListener("transitionend", () => {
     overlay.remove();
