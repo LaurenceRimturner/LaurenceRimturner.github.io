@@ -1126,23 +1126,36 @@ body:has(.loadingScreen) {
 
 /* Marquee */
 
+.fadeout-horizontal {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5rem,
+    black calc(100% - 5rem),
+    transparent
+  );
+}
+
 .marquee-container {
-  max-width: 100%;
-  overflow: hidden;
-  background-color: var(--theme-color);
   position: absolute;
   bottom: 0;
+  padding: 10px;
+  width: 100%;
 }
 
-.marquee {
-  white-space: nowrap;
-  overflow: hidden;
-  display: inline-block;
-  animation: marquee 15s linear infinite;
-  padding: 10px 0;
+.marquee-text {
+  overflow: clip;
 }
 
-.marquee h3 {
+.marquee-text-track{
+  display: flex;
+  padding-left: 10px;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+  
+}
+
+.marquee-text-track h3 {
   display: inline-block;
   color: var(--main-white);
   word-spacing: 10px;
@@ -1151,11 +1164,8 @@ body:has(.loadingScreen) {
 }
 
 @keyframes marquee {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(-50%, 0, 0);
+  to {
+    transform: translateX(-50%);
   }
 }
 
@@ -1919,6 +1929,7 @@ footer h4 {
 footer .marquee-container {
   position: relative;
   max-width: 100%;
+  background-color: var(--theme-color);
 }
 
 [class*="contact"] {
